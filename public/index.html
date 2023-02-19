@@ -27,14 +27,15 @@
 </head>
 
 <body>
-    <!-- container->bootstrap , Containet->non-bootstrap -->
+    <!-- container->bootstrap , Containet->not-bootstrap -->
     <div class="container">
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
                 <div class="container-fluid">
 
-                    <a class="navbar-brand" href="#" id="nav-home-link">
+                    <a class="navbar-brand" href="#" id="nav-home-link" data-toggle="tooltip" data-placement="left"
+                        title="To Home Page">
                         <img id="imgLogo" src="./assets/images/homePageIcon.jpg" alt="logo">
                     </a>
 
@@ -69,7 +70,7 @@
             </nav>
         </header>
         <main>
-            <div id="home-page" class="d-block">
+            <div id="home-page" class="d-none">
                 <h1>Home Page</h1>
             </div>
             <div id="about-us-page" class="d-none">
@@ -78,8 +79,31 @@
             <div id="register-page" class="d-none">
                 <h1>Register Page</h1>
             </div>
-            <div id="login-page" class="d-none">
-                <h1>Login Page</h1>
+            <div id="login-page" class="d-block">
+                <div>
+                    <h1 class="pagetitle display-1">Login Page</h1>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control w-50" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control w-50" id="exampleInputPassword1">
+                    </div>
+                    <button type="button" class="btn btn-outline-primary mb-3" data-toggle="tooltip"
+                        data-placement="left" title="Submit when all field is Okay">
+                        Submit
+                    </button>
+                    <p class="p-2 float-end">not registered yet ?
+                        <a class="nav-item" href="#" id="login-to-register-page"> Click here ...</a>
+                    </p>
+                </form>
+                <!-- id="nav-register-page" -->
+
             </div>
             <div id="user-page" class="d-none">
                 <h1>User Page</h1>

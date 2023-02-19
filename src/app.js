@@ -8,7 +8,7 @@ const RegisterNavLink = document.getElementById(LinksNavBarIdobj.registerLinkNav
 const LoginNavLink = document.getElementById(LinksNavBarIdobj.loginLinkNavBar);
 const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 const LogoutNavLink = document.getElementById(LinksNavBarIdobj.LogoutNavLink);
-
+const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
 
 HomeNavLink.addEventListener("click", () => {
     switchPages(PagesIdObj.homePage);
@@ -28,3 +28,6 @@ UserNavLink.addEventListener("click", () => {
 // LogoutNavLink.addEventListener("click", () => {
 //     switchPages(PagesIdObj.loginPage);
 // });
+LogintoRegister.addEventListener("click", () => {
+    switchPages(PagesIdObj.registerPage);
+});
