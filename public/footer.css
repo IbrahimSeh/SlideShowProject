@@ -5,7 +5,7 @@
     bottom: 0;
     width: 100%;
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: #0f0d35;
     border: 1px solid #f2cc0f;
 }
 
@@ -29,7 +29,7 @@
     text-align: center;
     border-radius: 50%;
     border: 1px solid #f2cc0f;
-    color: #0d0d0d;
+    color: #9453a6;
     /* animation: spin 8s linear infinite; */
 }
 
