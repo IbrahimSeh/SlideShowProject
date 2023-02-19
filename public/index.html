@@ -34,8 +34,8 @@
 
                 <div class="container-fluid">
 
-                    <a class="navbar-brand" href="#">
-                        <img id="imgLogo" src="./assets/images/SlideShowImgIcon.png" alt="logo">
+                    <a class="navbar-brand" href="#" id="nav-home-link">
+                        <img id="imgLogo" src="./assets/images/homePageIcon.jpg" alt="logo">
                     </a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -46,16 +46,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
 
                         <ul class="navbar-nav me-auto my-2 my-lg-0">
-
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#" id="nav-home-link">Home</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" id="nav-aboutus-link">About us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="nav-contactus-link">Contact us</a>
-                            </li>
+                            <!-- it's a Popup -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#" id="nav-add-new-property-link">Add new property</a>
                             </li>
@@ -66,18 +60,30 @@
                             <a class="nav-link responsive-mt" href="#" id="nav-login-page">Login</a>
                         </form>
                         <form class="d-flex responsive-nav-flex d-none" role="search" id="navAfterLogin">
-                            <a class="nav-link me-3" href="#" id="nav-edit-profile-page">Name</a>
+                            <a class="nav-link me-3" href="#" id="nav-edit-user-page">Name</a>
+                            <!-- return to login page -->
                             <a class="nav-link responsive-mt" href="#" id="nav-logout">Logout</a>
                         </form>
-                        <!-- <form class="d-flex responsive-mt" role="search"></form> -->
-
                     </div>
-
                 </div>
             </nav>
         </header>
         <main>
-            pages
+            <div id="home-page" class="d-block">
+                <h1>Home Page</h1>
+            </div>
+            <div id="about-us-page" class="d-none">
+                <h1>About us Page</h1>
+            </div>
+            <div id="register-page" class="d-none">
+                <h1>Register Page</h1>
+            </div>
+            <div id="login-page" class="d-none">
+                <h1>Login Page</h1>
+            </div>
+            <div id="user-page" class="d-none">
+                <h1>User Page</h1>
+            </div>
         </main>
 
         <footer>
