@@ -1,0 +1,16 @@
+@media (max-width: 991px) {
+
+    /* navbar */
+    .responsive-mt {
+        margin-top: 0.9rem;
+    }
+
+    .responsive-nav-flex {
+        flex-direction: column;
+    }
+}
+
+#imgLogo {
+    width: 80px;
+    margin-right: auto;
+}
