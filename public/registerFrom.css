@@ -1,0 +1,29 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.py-5 {
+    padding-top: 0rem !important;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+#Img-Register {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.Red-star {
+    color: red;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.Register-Section {
+    background-color: #eee;
+}

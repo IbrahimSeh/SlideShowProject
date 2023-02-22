@@ -1,6 +1,7 @@
 import LinksNavBarIdobj from "./modelsOfData/linksNavBar.js";
 import PagesIdObj from "./modelsOfData/pages.js";
 import { switchPages } from "./routes/switchRouter.js";
+import initializeNavbar from "./components/Navbar.js";
 
 const HomeNavLink = document.getElementById(LinksNavBarIdobj.homeLinkNavBar);
 const AboutusNavLink = document.getElementById(LinksNavBarIdobj.aboutusLinkNavBar);
@@ -9,6 +10,17 @@ const LoginNavLink = document.getElementById(LinksNavBarIdobj.loginLinkNavBar);
 const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 const LogoutNavLink = document.getElementById(LinksNavBarIdobj.LogoutNavLink);
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
+
+window.addEventListener("load", () => {
+    // initializeNavbar(showNewPopup);
+    initializeNavbar();
+    // if (checkIfConnected()) {
+    //     let user = localStorage.getItem("token");
+    //     user = JSON.parse(user);
+    //     navEditProfilePage.innerText = user.name;
+    // }
+});
+
 
 HomeNavLink.addEventListener("click", () => {
     switchPages(PagesIdObj.homePage);
