@@ -1,4 +1,4 @@
-import PropertyOfImg from "../modelsOfData/imgProduct";
+import PropertyOfImg from "../modelsOfData/imgProduct.js";
 
 let id = 1;
 let nextUserId = 1;
@@ -13,7 +13,7 @@ const createData = () => {
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
             "./assets/imgs/1.jpg"
         ),
-        new Property(
+        new PropertyOfImg(
             id++,
             "Chocolate house",
             20,
@@ -21,7 +21,7 @@ const createData = () => {
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
             "./assets/imgs/2.jpg"
         ),
-        new Property(
+        new PropertyOfImg(
             id++,
             "Kenny's beach house",
             25,
@@ -29,7 +29,7 @@ const createData = () => {
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
             "./assets/imgs/3.jpg"
         ),
-        new Property(
+        new PropertyOfImg(
             id++,
             "John's raft",
             9.9,
@@ -37,7 +37,7 @@ const createData = () => {
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
             "./assets/imgs/4.jpg"
         ),
-        new Property(
+        new PropertyOfImg(
             id++,
             "John's pie",
             3.14,
@@ -45,7 +45,7 @@ const createData = () => {
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
             "./assets/imgs/5.jpg"
         ),
-        new Property(
+        new PropertyOfImg(
             id++,
             "Kart's dream house",
             2.5,
@@ -58,12 +58,13 @@ const createData = () => {
 };
 
 const setInitialData = () => {
-    let properties = localStorage.getItem("props");
-    if (properties) {
+    let properties = localStorage.getItem("propsOfImg");
+    let users = localStorage.getItem("users");
+    // In case there is data previously in localStorage
+    if (users || properties) {
         return;
     }
     localStorage.setItem("propsOfImg", JSON.stringify(createData()));
-    console.log("in initial " + nextUserId);
     localStorage.setItem("nextid", id + "");
     localStorage.setItem("nextUserId", nextUserId + "");
 };

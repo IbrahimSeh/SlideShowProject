@@ -4,6 +4,8 @@ import { switchPages } from "./routes/switchRouter.js";
 import initializeNavbar from "./components/Navbar.js";
 import "./initialData/initialData.js";
 import "./pages/RegisterPg.js";
+import "./pages/LoginPage.js";
+import { showNewPopup } from "./pages/HomePage.js";
 
 const HomeNavLink = document.getElementById(LinksNavBarIdobj.homeLinkNavBar);
 const AboutusNavLink = document.getElementById(LinksNavBarIdobj.aboutusLinkNavBar);
@@ -14,13 +16,12 @@ const LogoutNavLink = document.getElementById(LinksNavBarIdobj.LogoutNavLink);
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
 
 window.addEventListener("load", () => {
-    // initializeNavbar(showNewPopup);
-    initializeNavbar();
-    // if (checkIfConnected()) {
-    //     let user = localStorage.getItem("token");
-    //     user = JSON.parse(user);
-    //     navEditProfilePage.innerText = user.name;
-    // }
+    initializeNavbar(showNewPopup);
+    if (checkIfConnected()) {
+        let user = localStorage.getItem("token");
+        user = JSON.parse(user);
+        navEditProfilePage.innerText = user.name;
+    }
 });
 
 

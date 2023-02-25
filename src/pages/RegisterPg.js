@@ -78,24 +78,24 @@ inputLName.addEventListener("input", () => {
     checkNameInput(inputLName);
 });
 // ADDRESS
-inputState.addEventListener("input", () => {
-    checkAddressInput(inputState);
-});
-inputCountry.addEventListener("input", () => {
-    checkAddressInput(inputCountry);
-});
-inputCity.addEventListener("input", () => {
-    checkAddressInput(inputCity);
-});
-inputStreet.addEventListener("input", () => {
-    checkAddressInput(inputStreet);
-});
-inputHouse.addEventListener("input", () => {
-    checkAddressInput(inputHouse);
-});
-inputZipCode.addEventListener("input", () => {
-    checkAddressInput(inputZipCode);
-});
+// inputState.addEventListener("input", () => {
+//     checkAddressInput(inputState);
+// });
+// inputCountry.addEventListener("input", () => {
+//     checkAddressInput(inputCountry);
+// });
+// inputCity.addEventListener("input", () => {
+//     checkAddressInput(inputCity);
+// });
+// inputStreet.addEventListener("input", () => {
+//     checkAddressInput(inputStreet);
+// });
+// inputHouse.addEventListener("input", () => {
+//     checkAddressInput(inputHouse);
+// });
+// inputZipCode.addEventListener("input", () => {
+//     checkAddressInput(inputZipCode);
+// });
 // CONTACT
 inputEmail.addEventListener("input", () => {
     checkEmailInput();
@@ -144,67 +144,67 @@ const checkNameInput = (name) => {
     ifEnableToSubmit();
 };
 
-const checkAddressInput = (partOfAddr) => {
-    let errorArr = validateAddress(partOfAddr.value, partOfAddr.placeholder.split(" ")[0]);
-    if (errorArr.length === 0) {
-        //the text is ok
-        partOfAddr.classList.remove("is-invalid");
-        if (partOfAddr.placeholder.split(" ")[0] === "state") {
-            document.getElementById("register-alert-state").classList.add("d-none");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "country") {
-            document.getElementById("register-alert-country").classList.add("d-none");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "city") {
-            document.getElementById("register-alert-city").classList.add("d-none");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "street") {
-            document.getElementById("register-alert-street").classList.add("d-none");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "house") {
-            document.getElementById("register-alert-house").classList.add("d-none");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "zip") {
-            document.getElementById("register-alert-zip").classList.add("d-none");
-        }
+// const checkAddressInput = (partOfAddr) => {
+//     let errorArr = validateAddress(partOfAddr.value, partOfAddr.placeholder.split(" ")[0]);
+//     if (errorArr.length === 0) {
+//         //the text is ok
+//         partOfAddr.classList.remove("is-invalid");
+//         if (partOfAddr.placeholder.split(" ")[0] === "state") {
+//             document.getElementById("register-alert-state").classList.add("d-none");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "country") {
+//             document.getElementById("register-alert-country").classList.add("d-none");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "city") {
+//             document.getElementById("register-alert-city").classList.add("d-none");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "street") {
+//             document.getElementById("register-alert-street").classList.add("d-none");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "house") {
+//             document.getElementById("register-alert-house").classList.add("d-none");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "zip") {
+//             document.getElementById("register-alert-zip").classList.add("d-none");
+//         }
 
-    } else {
-        //the text is not ok
-        partOfAddr.classList.add("is-invalid");
-        if (partOfAddr.placeholder.split(" ")[0] === "state") {
-            document.getElementById("register-alert-state").classList.remove("d-none");
-            document.getElementById("register-alert-state").innerHTML =
-                errorArr.join("<br>");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "country") {
-            document.getElementById("register-alert-country").classList.remove("d-none");
-            document.getElementById("register-alert-country").innerHTML =
-                errorArr.join("<br>");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "city") {
-            document.getElementById("register-alert-city").classList.remove("d-none");
-            document.getElementById("register-alert-city").innerHTML =
-                errorArr.join("<br>");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "street") {
-            document.getElementById("register-alert-street").classList.remove("d-none");
-            document.getElementById("register-alert-street").innerHTML =
-                errorArr.join("<br>");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "house") {
-            document.getElementById("register-alert-house").classList.remove("d-none");
-            document.getElementById("register-alert-house").innerHTML =
-                errorArr.join("<br>");
-        }
-        if (partOfAddr.placeholder.split(" ")[0] === "zip") {
-            document.getElementById("register-alert-zip").classList.remove("d-none");
-            document.getElementById("register-alert-zip").innerHTML =
-                errorArr.join("<br>");
-        }
-    }
+//     } else {
+//         //the text is not ok
+//         partOfAddr.classList.add("is-invalid");
+//         if (partOfAddr.placeholder.split(" ")[0] === "state") {
+//             document.getElementById("register-alert-state").classList.remove("d-none");
+//             document.getElementById("register-alert-state").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "country") {
+//             document.getElementById("register-alert-country").classList.remove("d-none");
+//             document.getElementById("register-alert-country").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "city") {
+//             document.getElementById("register-alert-city").classList.remove("d-none");
+//             document.getElementById("register-alert-city").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "street") {
+//             document.getElementById("register-alert-street").classList.remove("d-none");
+//             document.getElementById("register-alert-street").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "house") {
+//             document.getElementById("register-alert-house").classList.remove("d-none");
+//             document.getElementById("register-alert-house").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//         if (partOfAddr.placeholder.split(" ")[0] === "zip") {
+//             document.getElementById("register-alert-zip").classList.remove("d-none");
+//             document.getElementById("register-alert-zip").innerHTML =
+//                 errorArr.join("<br>");
+//         }
+//     }
 
-    ifEnableToSubmit();
-};
+//     ifEnableToSubmit();
+// };
 const checkEmailInput = () => {
     let errorArr = validateEmail(inputEmail.value);
     if (errorArr.length === 0) {
@@ -273,13 +273,13 @@ const checkPasswordInput = (pass) => {
 const ifEnableToSubmit = () =>
     (inputSubmit.disabled = !(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag));
 
-// const ifEnableToSubmit = () => {
-//     if (FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag) {
-//         inputSubmit.disabled = false;
-//     } else {
-//         inputSubmit.disabled = true;
-//     }
-// };
+inputResetAll.addEventListener("click", () => {
+    // inputFName.value = inputLName.value = inputState.value = inputCountry.value = inputCity.value =
+    //     inputStreet.value = inputHouse.value = inputZipCode.value = inputEmail.value = inputPhone.value = inputPassword.value =
+    //     inputRePassword.value = "";
+    // inputIsBussiness.checked = false;
+    location.reload();
+});
 
 inputSubmit.addEventListener("click", () => {
 
@@ -291,7 +291,6 @@ inputSubmit.addEventListener("click", () => {
         showToast("password & re-password doesn't match", false);
         return;
     }
-    console.log(inputIsBussiness.checked);
 
     let users = localStorage.getItem("users");
     let nextUserId = localStorage.getItem("nextUserId");

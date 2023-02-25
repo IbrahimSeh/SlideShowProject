@@ -54,8 +54,7 @@
                             </li>
                             <!-- it's a Popup -->
                             <li class="nav-item">
-                                <a class="nav-link d-flex d-none" href="#" id="nav-add-new-property-link">Add new
-                                    property</a>
+                                <a class="nav-link" href="#" id="nav-add-new-property-link">Add new property</a>
                             </li>
                         </ul>
 
@@ -272,7 +271,7 @@
                                             </div>
 
                                             <div class="mb-3 form-check d-flex justify-content-center">
-                                                <input type="checkbox" class="form-check-input" checked="false"
+                                                <input type="checkbox" class="form-check-input"
                                                     id="register-checkbox-bussiness" placeholder="checkbox-bussiness" />
                                                 <label class="form-check-label" for="register-checkbox-bussiness">
                                                     <h6>Bussiness client</h6>
@@ -302,17 +301,21 @@
                 </div>
                 <form onsubmit="event.preventDefault()">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control w-50" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <label for="login-input-email" class="form-label">Email</label>
+                        <input type="email" class="form-control w-50" id="login-input-email"
+                            placeholder="Please enter you'r email" required>
+                        <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control w-50" id="exampleInputPassword1">
+                        <label for="login-input-password" class="form-label">Password</label>
+                        <input type="password" class="form-control w-50" id="login-input-password"
+                            placeholder="Please enter you'r password" required>
+                        <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-outline-primary mb-3" data-toggle="tooltip"
-                        data-placement="left" title="Submit when all field is Okay">
+                    <button type="button" id="login-btn-submit" class="btn btn-outline-primary mb-3"
+                        data-toggle="tooltip" data-placement="left" title="Submit when entering email & password">
                         Submit
                     </button>
                     <p class="p-2 float-end">not registered yet ?
