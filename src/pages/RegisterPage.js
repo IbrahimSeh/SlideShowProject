@@ -5,6 +5,9 @@ import validateAddress from "../validations/validateAddress.js";
 import validateEmail from "../validations/validateEmail.js";
 import validatePhone from "../validations/validatePhone.js";
 import validatePassword from "../validations/validatePassword.js";
+import { switchPages } from "./routes/switchRouter.js";
+import PagesIdObj from "../modelsOfData/pages.js";
+import showToast from "../services/toast.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);
 const inputLName = document.getElementById(RegisterInputsId.Lname);
@@ -243,8 +246,12 @@ const checkPasswordInput = (pass) => {
     let errorArr = validatePassword(pass.value)
     console.log(pass.value);
     if (pass.value !== inputPassword.value) {
-        errorArr += "the password does not match the first one";
+        console.log("in the if " + pass.value);
+        console.log("in the if " + inputPassword.value);
+        errorArr = [...errorArr, "the password does not match the first one"];
+        RePasswordFlag = false;
     }
+    console.log(errorArr);
     if (errorArr.length === 0) {
         //the text is ok
         pass.classList.remove("is-invalid");
@@ -278,3 +285,59 @@ const checkPasswordInput = (pass) => {
 
 const ifEnableToSubmit = () =>
     (inputSubmit.disabled = !(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag));
+
+inputSubmit.addEventListener("click", () => {
+
+    if (!(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag)) {
+        //if someone changed the html from dev tools
+        return;
+    }
+
+    let users = localStorage.getItem("users");
+    let nextUserId = localStorage.getItem("nextUserId");
+    nextUserId = +nextUserId;
+    let newUser = new User(
+        nextUserId++,
+        inputFName.value,
+        inputLName.value,
+        inputState.value,
+        inputCountry.value,
+        inputCity.value,
+        inputStreet.value,
+        inputHouse.value,
+        inputZipCode.value,
+        inputEmail.value,
+        inputPassword.value,
+        inputRePassword.value,
+    );
+
+    localStorage.setItem("nextUserId", nextUserId + "");
+    if (!users) {
+        //the first user
+        users = [newUser];
+        // let user = new User(inputName.value, inputEmail.value, inputPassword.value);
+        // users = [user]
+        localStorage.setItem("users", JSON.stringify(users));
+        /*
+          JSON.stringify(users) - convert array of objects to string
+          localStorage.setItem - store the json string to localStorage with 
+            key users 
+            and value users as json string
+        */
+    } else {
+        //we have users
+        users = JSON.parse(users); // convert from string to array of objects
+        // console.log("users from localStorage", users);
+        for (let user of users) {
+            if (user.email === inputEmail.value) {
+                //display msg - email already exists
+                showToast("Email already exists", false);
+                return;
+            }
+        }
+        //user provided new email
+        users = [...users, newUser];
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+    switchPages(PagesIdObj.loginPage);
+});
