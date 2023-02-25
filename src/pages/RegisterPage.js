@@ -1,10 +1,10 @@
 import User from "../modelsOfData/user.js";
 import RegisterInputsId from "../modelsOfData/registerData.js";
-import validateName from "../validation/validatName.js";
-import validateAddress from "../validation/validateAddress.js";
-import validateEmail from "../validation/validateEmail.js";
-import validatePhone from "../validation/validatePhone.js";
-import validatePassword from "../validation/validatePassword.js";
+import validateName from "../validations/validateName.js";
+import validateAddress from "../validations/validateAddress.js";
+import validateEmail from "../validations/validateEmail.js";
+import validatePhone from "../validations/validatePhone.js";
+import validatePassword from "../validations/validatePassword.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);
 const inputLName = document.getElementById(RegisterInputsId.Lname);
@@ -31,28 +31,28 @@ let RePasswordFlag = false;
 window.addEventListener("load", () => {
     //when page loaded
     if (inputFName.value !== "") {
-        checkNameInput();
+        checkNameInput(inputFName);
     }
     if (inputLName.value !== "") {
-        checkNameInput();
+        checkNameInput(inputLName);
     }
     if (inputState.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputState);
     }
     if (inputCountry.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputCountry);
     }
     if (inputCity.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputCity);
     }
     if (inputStreet.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputStreet);
     }
     if (inputHouse.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputHouse);
     }
     if (inputZipCode.value !== "") {
-        checkAddressInput();
+        checkAddressInput(inputZipCode);
     }
     if (inputEmail.value !== "") {
         checkEmailInput();
@@ -61,37 +61,37 @@ window.addEventListener("load", () => {
         checkPhoneInput();
     }
     if (inputPassword.value !== "") {
-        checkPasswordInput();
+        checkPasswordInput(inputPassword);
     }
     if (inputRePassword.value !== "") {
-        checkPasswordInput();
+        checkPasswordInput(inputRePassword);
     }
 });
 // NAME
 inputFName.addEventListener("input", () => {
-    checkNameInput();
+    checkNameInput(inputFName);
 });
 inputLName.addEventListener("input", () => {
-    checkNameInput();
+    checkNameInput(inputLName);
 });
 // ADDRESS
 inputState.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputState);
 });
 inputCountry.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputCountry);
 });
 inputCity.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputCity);
 });
 inputStreet.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputStreet);
 });
 inputHouse.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputHouse);
 });
 inputZipCode.addEventListener("input", () => {
-    checkAddressInput();
+    checkAddressInput(inputZipCode);
 });
 // CONTACT
 inputEmail.addEventListener("input", () => {
@@ -102,33 +102,108 @@ inputPhone.addEventListener("input", () => {
 });
 // SECURITY
 inputPassword.addEventListener("input", () => {
-    checkPasswordInput();
+    checkPasswordInput(inputPassword);
 });
 inputRePassword.addEventListener("input", () => {
-    checkPasswordInput();
+    checkPasswordInput(inputRePassword);
 });
 
-const checkNameInput = () => {
-    let errorArr = validateName(inputName.value);
+const checkNameInput = (name) => {
+    let errorArr = validateName(name.value);
     //   console.log(reg.test(inputName.value));
+    console.log(name.placeholder);
     if (errorArr.length === 0) {
         //the text is ok
-        inputName.classList.remove("is-invalid");
-        document.getElementById("register-alert-name").classList.add("d-none");
-        nameOk = true;
+        name.classList.remove("is-invalid");
+        if (name.placeholder.split(" ")[0] === "First") {
+            document.getElementById("register-alert-Fname").classList.add("d-none");
+            FnameFlag = true;
+        }
+        if (name.placeholder.split(" ")[0] === "Last") {
+            document.getElementById("register-alert-Lname").classList.add("d-none");
+            LnameFlag = true;
+        }
+
     } else {
         //the text is not ok
-        inputName.classList.add("is-invalid");
-        document.getElementById("register-alert-name").classList.remove("d-none");
-        document.getElementById("register-alert-name").innerHTML =
-            errorArr.join("<br>");
-        nameOk = false;
+        name.classList.add("is-invalid");
+        if (name.placeholder.split(" ")[0] === "First") {
+            document.getElementById("register-alert-Fname").classList.remove("d-none");
+            document.getElementById("register-alert-Fname").innerHTML =
+                errorArr.join("<br>");
+            FnameFlag = false;
+        }
+        if (name.placeholder.split(" ")[0] === "Last") {
+            document.getElementById("register-alert-Lname").classList.remove("d-none");
+            document.getElementById("register-alert-Lname").innerHTML =
+                errorArr.join("<br>");
+            LnameFlag = false;
+        }
     }
+    console.log('fname ' + FnameFlag + ' lname ' + LnameFlag);
     ifEnableToSubmit();
 };
 
-const checkAddressInput = () => {
+const checkAddressInput = (partOfAddr) => {
+    let errorArr = validateAddress(partOfAddr.value, partOfAddr.placeholder.split(" ")[0]);
+    //   console.log(reg.test(inputName.value));
+    // console.log(name.placeholder);
+    if (errorArr.length === 0) {
+        //the text is ok
+        partOfAddr.classList.remove("is-invalid");
+        if (partOfAddr.placeholder.split(" ")[0] === "state") {
+            document.getElementById("register-alert-state").classList.add("d-none");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "country") {
+            document.getElementById("register-alert-country").classList.add("d-none");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "city") {
+            document.getElementById("register-alert-city").classList.add("d-none");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "street") {
+            document.getElementById("register-alert-street").classList.add("d-none");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "house") {
+            document.getElementById("register-alert-house").classList.add("d-none");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "zip") {
+            document.getElementById("register-alert-zip").classList.add("d-none");
+        }
 
+    } else {
+        //the text is not ok
+        partOfAddr.classList.add("is-invalid");
+        if (partOfAddr.placeholder.split(" ")[0] === "state") {
+            document.getElementById("register-alert-state").classList.remove("d-none");
+            document.getElementById("register-alert-state").innerHTML =
+                errorArr.join("<br>");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "country") {
+            document.getElementById("register-alert-country").classList.remove("d-none");
+            document.getElementById("register-alert-country").innerHTML =
+                errorArr.join("<br>");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "city") {
+            document.getElementById("register-alert-city").classList.remove("d-none");
+            document.getElementById("register-alert-city").innerHTML =
+                errorArr.join("<br>");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "street") {
+            document.getElementById("register-alert-street").classList.remove("d-none");
+            document.getElementById("register-alert-street").innerHTML =
+                errorArr.join("<br>");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "house") {
+            document.getElementById("register-alert-house").classList.remove("d-none");
+            document.getElementById("register-alert-house").innerHTML =
+                errorArr.join("<br>");
+        }
+        if (partOfAddr.placeholder.split(" ")[0] === "zip") {
+            document.getElementById("register-alert-zip").classList.remove("d-none");
+            document.getElementById("register-alert-zip").innerHTML =
+                errorArr.join("<br>");
+        }
+    }
 
     ifEnableToSubmit();
 };
@@ -138,45 +213,67 @@ const checkEmailInput = () => {
         //the text is ok
         inputEmail.classList.remove("is-invalid");
         document.getElementById("register-alert-email").classList.add("d-none");
-        emailOk = true;
+        EmailFlag = true;
     } else {
         //the text is not ok
         inputEmail.classList.add("is-invalid");
         document.getElementById("register-alert-email").classList.remove("d-none");
         document.getElementById("register-alert-email").innerHTML =
             errorArr.join("<br>");
-        emailOk = false;
+        EmailFlag = false;
     }
     ifEnableToSubmit();
 };
 const checkPhoneInput = () => {
-
-
-
-    ifEnableToSubmit();
-};
-const checkPasswordInput = () => {
-    let errorArr = validatePassword(inputPassword.value);
+    let errorArr = validatePhone(inputPhone.value);
     if (errorArr.length === 0) {
         //the text is ok
-        inputPassword.classList.remove("is-invalid");
-        document.getElementById("register-alert-password").classList.add("d-none");
-        passwordOk = true;
+        inputPhone.classList.remove("is-invalid");
+        document.getElementById("register-alert-phone").classList.add("d-none");
     } else {
         //the text is not ok
-        inputPassword.classList.add("is-invalid");
-        document
-            .getElementById("register-alert-password")
-            .classList.remove("d-none");
-        document.getElementById("register-alert-password").innerHTML =
+        inputPhone.classList.add("is-invalid");
+        document.getElementById("register-alert-phone").classList.remove("d-none");
+        document.getElementById("register-alert-phone").innerHTML =
             errorArr.join("<br>");
-        passwordOk = false;
     }
     ifEnableToSubmit();
 };
+const checkPasswordInput = (pass) => {
+    let errorArr = validatePassword(pass.value)
+    console.log(pass.value);
+    if (pass.value !== inputPassword.value) {
+        errorArr += "the password does not match the first one";
+    }
+    if (errorArr.length === 0) {
+        //the text is ok
+        pass.classList.remove("is-invalid");
+        if (pass.placeholder.split(" ")[0] === "Password") {
+            document.getElementById("register-alert-password").classList.add("d-none");
+            PasswordFlag = true;
+        }
+        if (pass.placeholder.split(" ")[0] === "Re") {
+            document.getElementById("register-alert-repassword").classList.add("d-none");
+            RePasswordFlag = true;
+        }
 
-const saveUserToLocalStorage = () => {
-
+    } else {
+        //the text is not ok
+        pass.classList.add("is-invalid");
+        if (pass.placeholder.split(" ")[0] === "Password") {
+            document.getElementById("register-alert-password").classList.remove("d-none");
+            document.getElementById("register-alert-password").innerHTML =
+                errorArr.join("<br>");
+            PasswordFlag = false;
+        }
+        if (pass.placeholder.split(" ")[0] === "Re") {
+            document.getElementById("register-alert-repassword").classList.remove("d-none");
+            document.getElementById("register-alert-repassword").innerHTML =
+                errorArr.join("<br>");
+            RePasswordFlag = false;
+        }
+    }
+    ifEnableToSubmit();
 };
 
 const ifEnableToSubmit = () =>
