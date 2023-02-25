@@ -71,7 +71,9 @@
                     </div>
                 </div>
             </nav>
+
         </header>
+
         <main>
             <div id="home-page" class="d-none">
                 <h1>Home Page</h1>
@@ -270,7 +272,7 @@
                                             </div>
 
                                             <div class="mb-3 form-check d-flex justify-content-center">
-                                                <input type="checkbox" class="form-check-input"
+                                                <input type="checkbox" class="form-check-input" checked="false"
                                                     id="register-checkbox-bussiness" placeholder="checkbox-bussiness" />
                                                 <label class="form-check-label" for="register-checkbox-bussiness">
                                                     <h6>Bussiness client</h6>
@@ -280,9 +282,10 @@
                                             <div class="d-flex justify-content-end pt-3">
                                                 <button id="register-btn-resetAll" type="button"
                                                     class="btn btn-light btn-lg">Reset all</button>
-                                                <button id="register-btn-submit" type="button"
+                                                <button id="register-btn-submit" type="button" disabled="true"
                                                     class="btn btn-warning btn-lg ms-2">Submit
                                                     form</button>
+                                                <div id="toast"></div>
                                             </div>
 
                                         </div>
@@ -291,8 +294,8 @@
                             </div>
                         </div>
                 </section>
-
             </div>
+
             <div id="login-page" class="d-none">
                 <div>
                     <h1 class="pagetitle display-1">LOGIN PAGE</h1>

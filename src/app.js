@@ -3,7 +3,7 @@ import PagesIdObj from "./modelsOfData/pages.js";
 import { switchPages } from "./routes/switchRouter.js";
 import initializeNavbar from "./components/Navbar.js";
 import "./initialData/initialData.js";
-import "./pages/RegisterPage.js";
+import "./pages/RegisterPg.js";
 
 const HomeNavLink = document.getElementById(LinksNavBarIdobj.homeLinkNavBar);
 const AboutusNavLink = document.getElementById(LinksNavBarIdobj.aboutusLinkNavBar);

@@ -23,7 +23,7 @@ class User {
         zipcode,
         email,
         password,
-        phone,) {
+        phone, isBussiness) {
         this.id = id;
         this.Fname = Fname;
         this.Lname = Lname;
@@ -36,7 +36,7 @@ class User {
         this.email = email;
         this.password = password;
         this.phone = phone;
-        this.isBussiness = flase;
+        this.isBussiness = isBussiness;
     }
 }
 export default User;

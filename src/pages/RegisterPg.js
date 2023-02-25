@@ -5,7 +5,7 @@ import validateAddress from "../validations/validateAddress.js";
 import validateEmail from "../validations/validateEmail.js";
 import validatePhone from "../validations/validatePhone.js";
 import validatePassword from "../validations/validatePassword.js";
-import { switchPages } from "./routes/switchRouter.js";
+import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
 import showToast from "../services/toast.js";
 
@@ -113,8 +113,6 @@ inputRePassword.addEventListener("input", () => {
 
 const checkNameInput = (name) => {
     let errorArr = validateName(name.value);
-    //   console.log(reg.test(inputName.value));
-    console.log(name.placeholder);
     if (errorArr.length === 0) {
         //the text is ok
         name.classList.remove("is-invalid");
@@ -143,14 +141,11 @@ const checkNameInput = (name) => {
             LnameFlag = false;
         }
     }
-    console.log('fname ' + FnameFlag + ' lname ' + LnameFlag);
     ifEnableToSubmit();
 };
 
 const checkAddressInput = (partOfAddr) => {
     let errorArr = validateAddress(partOfAddr.value, partOfAddr.placeholder.split(" ")[0]);
-    //   console.log(reg.test(inputName.value));
-    // console.log(name.placeholder);
     if (errorArr.length === 0) {
         //the text is ok
         partOfAddr.classList.remove("is-invalid");
@@ -244,14 +239,6 @@ const checkPhoneInput = () => {
 };
 const checkPasswordInput = (pass) => {
     let errorArr = validatePassword(pass.value)
-    console.log(pass.value);
-    if (pass.value !== inputPassword.value) {
-        console.log("in the if " + pass.value);
-        console.log("in the if " + inputPassword.value);
-        errorArr = [...errorArr, "the password does not match the first one"];
-        RePasswordFlag = false;
-    }
-    console.log(errorArr);
     if (errorArr.length === 0) {
         //the text is ok
         pass.classList.remove("is-invalid");
@@ -286,15 +273,29 @@ const checkPasswordInput = (pass) => {
 const ifEnableToSubmit = () =>
     (inputSubmit.disabled = !(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag));
 
+// const ifEnableToSubmit = () => {
+//     if (FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag) {
+//         inputSubmit.disabled = false;
+//     } else {
+//         inputSubmit.disabled = true;
+//     }
+// };
+
 inputSubmit.addEventListener("click", () => {
 
     if (!(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag)) {
         //if someone changed the html from dev tools
         return;
     }
+    if (inputPassword.value !== inputRePassword.value) {
+        showToast("password & re-password doesn't match", false);
+        return;
+    }
+    console.log(inputIsBussiness.checked);
 
     let users = localStorage.getItem("users");
     let nextUserId = localStorage.getItem("nextUserId");
+    console.log("in register " + nextUserId);
     nextUserId = +nextUserId;
     let newUser = new User(
         nextUserId++,
@@ -308,7 +309,8 @@ inputSubmit.addEventListener("click", () => {
         inputZipCode.value,
         inputEmail.value,
         inputPassword.value,
-        inputRePassword.value,
+        inputPhone.value,
+        inputIsBussiness.checked,
     );
 
     localStorage.setItem("nextUserId", nextUserId + "");
@@ -319,8 +321,8 @@ inputSubmit.addEventListener("click", () => {
         // users = [user]
         localStorage.setItem("users", JSON.stringify(users));
         /*
-          JSON.stringify(users) - convert array of objects to string
-          localStorage.setItem - store the json string to localStorage with 
+        JSON.stringify(users) - convert array of objects to string
+        localStorage.setItem - store the json string to localStorage with 
             key users 
             and value users as json string
         */
