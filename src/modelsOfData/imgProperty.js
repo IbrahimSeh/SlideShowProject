@@ -1,4 +1,4 @@
-class PropertyOfImg {
+class imgProperty {
     id;
     name;
     price;
@@ -12,4 +12,4 @@ class PropertyOfImg {
         this.imgUrl = imgUrl;
     }
 }
-export default PropertyOfImg;
+export default imgProperty;

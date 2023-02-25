@@ -1,8 +1,8 @@
 import checkIfBussiness from "../utils/checkIfBussiness.js";
 import checkIfConnected from "../utils/checkIfConnected.js";
-import getNextId from "../utils/getNextId.js";
+import getNextPropertyId from "../utils/getNextPropertyId.js";
 
-let nextId;
+let nextPropertyId;
 let isBussiness;
 let isConnected;
 let showPopup;
@@ -13,7 +13,7 @@ const userBeforeLogin = document.getElementById("userBeforeLogin");
 const userAfterLogin = document.getElementById("userAfterLogin");
 
 const initializeNavbar = (showPopupFromApp) => {
-    nextId = getNextId();
+    nextPropertyId = getNextPropertyId();
     isBussiness = checkIfBussiness();
     isConnected = checkIfConnected();
     if (isConnected) {
@@ -27,7 +27,7 @@ const initializeNavbar = (showPopupFromApp) => {
         navAddNewPropertyLink.classList.add("d-none");
     }
     navAddNewPropertyLink.addEventListener("click", () => {
-        showPopup();
+        // showPopup();
     });
 };
 
