@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
     originalPropertiesArr = [...propertiesArr];
     isBussiness = checkIfBussiness();
     //passing propertiesArr to PropertiesGallery.js
-    initialPropertiesGallery(propertiesArr);
+    initialPropertiesGallery(propertiesArr, isBussiness, deleteProperty, showPopup);
     initialPropertiesList(propertiesArr, isBussiness, deleteProperty, showPopup);
     initialPropertiesCarousel(propertiesArr);
     initializeElements();
@@ -84,6 +84,23 @@ const initializeBtns = () => {
 };
 
 const displayMode = (toDisplay) => {
+    console.log('toDisplay ' + toDisplay.id);
+    if (toDisplay.id === "propertiesCarusel") {
+        document.getElementById("search-div").classList.add("d-none");
+    }
+    switch (toDisplay.id) {
+        case "propertiesList":
+            document.getElementById("search-div").classList.remove("d-none");
+            break;
+        case "propertiesGallery":
+            document.getElementById("search-div").classList.remove("d-none");
+            break;
+        case "propertiesCarusel":
+            document.getElementById("search-div").classList.add("d-none");
+            break;
+        default:
+            console.log('homepage.js displayMode default page 404');
+    }
     // hide what we currently showing
     displayNow.classList.remove("d-block");
     displayNow.classList.add("d-none");
@@ -97,7 +114,7 @@ const displayMode = (toDisplay) => {
 const updateDisplays = () => {
     updatePropertiesGallery(propertiesArr); // update gallery
     updatePropertiesList(propertiesArr); // update list
-    updatePropertiesCarousel(propertiesArr); // update carousel
+    //updatePropertiesCarousel(propertiesArr);  update carousel
 };
 
 const saveToLocalStorage = (arrToSave) => {

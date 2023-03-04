@@ -10,7 +10,7 @@ const initialPropertiesList = (
     deletePropertyFromHomePage,
     showPopupFromHomePage
 ) => {
-    console.log('initialPropertiesList PropertiesList.js isBussinessParam ' + isBussinessParam);
+
     listDiv = document.getElementById("home-page-properties-list");
     isBussiness = isBussinessParam;
     deleteProperty = deletePropertyFromHomePage;
