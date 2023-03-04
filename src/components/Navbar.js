@@ -29,6 +29,7 @@ const initializeNavbar = (addNewImgPopup) => {
         navAddNewPropertyLink.classList.remove("d-none");
         navAddNewPropertyLink.classList.add("d-flex");
     }
+
     navAddNewPropertyLink.addEventListener("click", () => {
         addNewImgPopup();
     });

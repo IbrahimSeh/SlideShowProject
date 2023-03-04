@@ -91,8 +91,7 @@
                         <div class="card">
                             <!-- editPropertiesPopupImgDisplay -->
                             <!-- https://static-cse.canva.com/blob/666314/bestfreestockphotos.jpg -->
-                            <img src="https://static-cse.canva.com/blob/666314/bestfreestockphotos.jpg"
-                                class="card-img-top" alt="image to edit" id="currentImgInPopup" />
+                            <img src="" class="card-img-top" alt="" id="currentImgInPopup" />
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <div class="form-floating mb-3">
@@ -157,7 +156,7 @@
                             <i class="bi bi-file-earmark-slides"></i>
                         </button>
                     </div>
-                    <form class="d-flex align-self-end" role="search">
+                    <form class="d-flex align-self-end">
                         <button type="button" class="btn btn-info" id="homeDisplaySortASC" data-toggle="tooltip"
                             data-placement="left" title="display ascendant">
                             <i class=" bi bi-sort-alpha-down"></i>
@@ -170,9 +169,15 @@
                 </div>
                 <hr>
                 <!-- search box -->
-                <div class="search-box m-3">
-                    <button class="btn-search"><i class="bi bi-search"></i></button>
-                    <input id="homeDisplaySearch" type="text" class="input-search" placeholder="Type to Search...">
+                <div class="d-flex justify-content-between mb-2">
+                    <div></div>
+                    <form class="d-flex align-self-end">
+                        <div class="search-box">
+                            <button class="btn-search"><i class="bi bi-search"></i></button>
+                            <input id="homeDisplaySearch" type="text" class="input-search"
+                                placeholder="Type to Search...">
+                        </div>
+                    </form>
                 </div>
                 <hr>
                 <!-- gallery ,list ,carusel -->

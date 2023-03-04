@@ -1,17 +1,18 @@
 let propertiesArr;
 let listDiv;
-let isAdmin;
+let isBussiness;
 let deleteProperty;
 let showPopup;
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
     propertiesArrFromHomePage,
-    isAdminParam,
+    isBussinessParam,
     deletePropertyFromHomePage,
     showPopupFromHomePage
 ) => {
+    console.log('initialPropertiesList PropertiesList.js isBussinessParam ' + isBussinessParam);
     listDiv = document.getElementById("home-page-properties-list");
-    isAdmin = isAdminParam;
+    isBussiness = isBussinessParam;
     deleteProperty = deletePropertyFromHomePage;
     showPopup = showPopupFromHomePage;
     updatePropertiesList(propertiesArrFromHomePage);
@@ -28,7 +29,7 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
 };
 
 const createItem = (name, description, price, img, id) => {
-    const adminBtns = `
+    const BussinessBtn = `
   <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
     <i class="bi bi-pen-fill"></i> Edit
   </button>
@@ -57,7 +58,7 @@ const createItem = (name, description, price, img, id) => {
         <button type="button" class="btn btn-success w-100">
           <i class="bi bi-currency-dollar"></i> Buy now
         </button>
-        ${isAdmin ? adminBtns : ""}
+        ${isBussiness ? BussinessBtn : ""}
         </div>
     </div>
     </li>

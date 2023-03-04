@@ -11,7 +11,7 @@ const createData = () => {
             8.12,
             `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
         Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-            "./assets/images/awsomeColor1.jpg"
+            "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
         ),
         // https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg
         new imgProperty(

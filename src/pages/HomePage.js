@@ -17,17 +17,18 @@ let propertiesArr, originalPropertiesArr;
 let displayNow; // display that we can see now
 
 /* btns */
-let homeDisplayList;
-let homeDisplayGallery;
-let homeDisplayCousel;
-/* displays */
-let propertiesGallery;
-let propertiesList;
-let propertiesCarusel;
+let homeDisplayList = document.getElementById("homeDisplayList");
+let homeDisplayGallery = document.getElementById("homeDisplayGallery");
+let homeDisplayCousel = document.getElementById("homeDisplayCousel");
+/* displays div's*/
+let propertiesGallery = document.getElementById("propertiesGallery");
+let propertiesList = document.getElementById("propertiesList");
+let propertiesCarusel = document.getElementById("propertiesCarusel");
 
 let isBussiness;
 
 window.addEventListener("load", () => {
+    console.log('load homepage.js');
     propertiesArr = localStorage.getItem("propsOfImg");
     if (!propertiesArr) {
         return;
@@ -45,15 +46,7 @@ window.addEventListener("load", () => {
 });
 
 const initializeElements = () => {
-    /* btns */
-    homeDisplayList = document.getElementById("homeDisplayList");
-    homeDisplayGallery = document.getElementById("homeDisplayGallery");
-    homeDisplayCousel = document.getElementById("homeDisplayCousel");
-    /* divs */
-    propertiesGallery = document.getElementById("propertiesGallery");
-    propertiesList = document.getElementById("propertiesList");
-    propertiesCarusel = document.getElementById("propertiesCarusel");
-    displayNow = propertiesCarusel; // choose who we want to display
+    displayNow = propertiesList; // choose who we want to display
     displayMode(displayNow);
 };
 

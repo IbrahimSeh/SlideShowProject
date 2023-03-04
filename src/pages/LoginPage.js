@@ -4,8 +4,9 @@ import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
 import initializeNavbar from "../components/Navbar.js";
 import LinksNavBarIdobj from "../modelsOfData/linksNavBar.js";
-const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
+import { addNewImgPopup } from "../components/addNewImgPopup.js";
 
+const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 const loginInputEmail = document.querySelector("#login-input-email");
 const loginInputPassword = document.querySelector("#login-input-password");
 const loginSubmit = document.querySelector("#login-btn-submit");
@@ -84,8 +85,9 @@ loginSubmit.addEventListener("click", () => {
         })
     );
 
-    initializeNavbar();
+    initializeNavbar(addNewImgPopup);
     UserNavLink.innerText = user.Fname + " " + user.Lname;
     console.log('to home page from login');
-    switchPages(PagesIdObj.homePage);
+    // switchPages(PagesIdObj.homePage);
+    location.reload();
 });

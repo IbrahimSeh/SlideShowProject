@@ -9,10 +9,10 @@ const nameToEditInPopup = document.getElementById(
     "nameToEditInPopup"
 );
 const descriptionToEditInPopup = document.getElementById(
-    "editPropertiesPopupDescription"
+    "descriptionToEditInPopup"
 );
 const priceToEditInPopup = document.getElementById(
-    "editPropertiesPopupPrice"
+    "priceToEditInPopup"
 );
 const imgToEditInPopup = document.getElementById(
     "imgToEditInPopup"
