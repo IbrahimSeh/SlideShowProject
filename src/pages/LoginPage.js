@@ -85,7 +85,7 @@ loginSubmit.addEventListener("click", () => {
     );
 
     initializeNavbar();
-    UserNavLink.innerText = user.Fname;
+    UserNavLink.innerText = user.Fname + " " + user.Lname;
     console.log('to home page from login');
     switchPages(PagesIdObj.homePage);
 });

@@ -114,8 +114,8 @@ const initializeBtns = () => {
 const createItem = (name, img) => {
     //opacity-0 hide image
     return `
-      <img src="${img}" alt="${name}" class="opacity-0" />
-  `;
+    <img src="${img}" alt="${name}" class="opacity-0" />
+`;
 };
 
 const createCarousel = () => {
