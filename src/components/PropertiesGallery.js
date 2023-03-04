@@ -25,40 +25,31 @@ const updatePropertiesGallery = (propertiesArrFromHomePage) => {
   createGallery();
 };
 
-const createCard = (name, description, price, img, id) => {
+const createCard = (name, credit, price, imgUrl, id) => {
   const BussinessBtn = `
   <button type="button" class="btn btn-warning" id="propertyGalleryEditBtn-${id}">
     <i class="bi bi-pen-fill"></i> Edit
   </button>
   <button type="button" class="btn btn-danger" id="propertyGalleryDeleteBtn-${id}">
-    <i class="bi bi-pen-fill"></i> Delete
+    <i class="bi bi-trash3"></i> Delete
   </button>
   `;
   return `
-  <div class="col">
+  
     <div class="card">
-      <img
-        src="${img}"
-        class="card-img-top"
-        alt="${name}"
-      />
-      <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">
-          ${description}
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">${price}</li>
-      </ul>
-      <div class="card-body">
+                    <img src="${imgUrl}" class="card-img-top">
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p>Credit :<span class="card-text"> ${credit} </span class="card-text"></p>
+                        <hr>
+                        <p>Price :<span> ${price} </span></p>
+                    </div>
         <button type="button" class="btn btn-success">
           Buy now
         </button>
         ${isBussiness ? BussinessBtn : ""}
       </div>
-    </div>
-  </div>
   `;
 };
 
@@ -102,7 +93,7 @@ const createGallery = () => {
   for (let property of propertiesArr) {
     innerStr += createCard(
       property.name,
-      property.description,
+      property.credit,
       property.price,
       property.imgUrl,
       property.id

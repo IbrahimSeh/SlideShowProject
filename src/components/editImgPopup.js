@@ -8,8 +8,8 @@ const currentImgInPopup = document.getElementById(
 const nameToEditInPopup = document.getElementById(
     "nameToEditInPopup"
 );
-const descriptionToEditInPopup = document.getElementById(
-    "descriptionToEditInPopup"
+const creditToEditInPopup = document.getElementById(
+    "creditToEditInPopup"
 );
 const priceToEditInPopup = document.getElementById(
     "priceToEditInPopup"
@@ -31,7 +31,7 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
     editProperty = editPropertyFromHomePage;
     currentImgInPopup.src = selectedProperty.imgUrl;
     nameToEditInPopup.value = selectedProperty.name;
-    descriptionToEditInPopup.value = selectedProperty.description;
+    creditToEditInPopup.value = selectedProperty.credit;
     priceToEditInPopup.value = selectedProperty.price;
     imgToEditInPopup.value = selectedProperty.imgUrl;
     showPopup();
@@ -60,7 +60,7 @@ window.addEventListener("load", () => {
         .getElementById("saveBtn-EditImgPopup")
         .addEventListener("click", () => {
             selectedProperty.name = nameToEditInPopup.value;
-            selectedProperty.description = descriptionToEditInPopup.value;
+            selectedProperty.credit = creditToEditInPopup.value;
             selectedProperty.price = priceToEditInPopup.value;
             selectedProperty.imgUrl = imgToEditInPopup.value;
             editProperty(selectedProperty);

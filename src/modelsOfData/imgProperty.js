@@ -2,13 +2,13 @@ class imgProperty {
     id;
     name;
     price;
-    description;
+    credit;
     imgUrl;
-    constructor(id, name, price, description, imgUrl) {
+    constructor(id, name, price, credit, imgUrl) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.description = description;
+        this.credit = credit;
         this.imgUrl = imgUrl;
     }
 }

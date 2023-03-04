@@ -84,7 +84,6 @@ const initializeBtns = () => {
 };
 
 const displayMode = (toDisplay) => {
-    console.log('toDisplay ' + toDisplay.id);
     if (toDisplay.id === "propertiesCarusel") {
         document.getElementById("search-div").classList.add("d-none");
     }

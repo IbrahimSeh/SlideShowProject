@@ -1,5 +1,6 @@
 let propertiesArr;
-let listDiv;
+let listDivThead;
+let listDivTbody;
 let isBussiness;
 let deleteProperty;
 let showPopup;
@@ -11,7 +12,8 @@ const initialPropertiesList = (
     showPopupFromHomePage
 ) => {
 
-    listDiv = document.getElementById("home-page-properties-list");
+    listDivThead = document.getElementById("home-page-properties-list-thead");
+    listDivTbody = document.getElementById("home-page-properties-list-tbody");
     isBussiness = isBussinessParam;
     deleteProperty = deletePropertyFromHomePage;
     showPopup = showPopupFromHomePage;
@@ -27,41 +29,50 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
     propertiesArr = propertiesArrFromHomePage;
     createList();
 };
-
-const createItem = (name, description, price, img, id) => {
+const completeHead = () => {
+    const BussinessBtn = `<tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">Image</th>
+                                <th colspan="2" scope="col">Pic</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Credit</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>`;
+    const noBussinessBtn = `<tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">Image</th>
+                                <th colspan="2" scope="col">Pic</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Credit</th>
+                            </tr>`;
+    return `${isBussiness ? BussinessBtn : noBussinessBtn}`;
+};
+const createItem = (name, credit, price, imgUrl, id) => {
+    // console.log('createItem ' + name, credit, img, id);
     const BussinessBtn = `
-  <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
-    <i class="bi bi-pen-fill"></i> Edit
+   <td><button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
+    <i class="bi bi-pencil-square"></i> Edit
   </button>
-  <button type="button" class="btn btn-danger w-100" id="propertyListDeleteBtn-${id}">
-    <i class="bi bi-x-circle-fill"></i> Delete
+  </td>
+  <td><button type="button" class="btn btn-warning w-100" id="propertyListDeleteBtn-${id}">
+    <i class="bi bi-trash3"></i> Edit
   </button>
+  </td>
   `;
     return `
-  <li class="list-group-item">
-    <div class="row">
-        <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${name}" />
-        </div>
-        <div class="col-md-8">
-        <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-            ${price}
-            </h6>
-            <p class="card-text">
-            ${description}
-            </p>
-        </div>
-        </div>
-        <div class="col-md-2">
-        <button type="button" class="btn btn-success w-100">
-          <i class="bi bi-currency-dollar"></i> Buy now
-        </button>
-        ${isBussiness ? BussinessBtn : ""}
-        </div>
-    </div>
-    </li>
+            <tr>
+                <th scope="row">${id}</th>
+                <td><img src="${imgUrl}"
+                        alt="" style="width: 150px;" ></td>
+                <td colspan="2">
+                    <h6>${imgUrl}</h6>
+                </td>
+                <td>${name}</td>
+                <td>${credit}</td>
+                
+                ${isBussiness ? BussinessBtn : ""}
+            </tr>
   `;
 };
 
@@ -95,7 +106,8 @@ const clearEventListeners = (idKeyword, handleFunction) => {
 };
 
 const createList = () => {
-    let innerStr = "";
+    let innerStrBody = "";
+    let innerStrHead = "";
     //clear event listeners for delete btns
     clearEventListeners("propertyListDeleteBtn", handleDeleteBtnClick);
     //clear event listeners for edit btns
@@ -103,15 +115,17 @@ const createList = () => {
 
     //create new elements and remove old ones
     for (let property of propertiesArr) {
-        innerStr += createItem(
+        innerStrBody += createItem(
             property.name,
-            property.description,
+            property.credit,
             property.price,
             property.imgUrl,
             property.id
         );
     }
-    listDiv.innerHTML = innerStr;
+    innerStrHead += completeHead();
+    listDivTbody.innerHTML = innerStrBody;
+    listDivThead.innerHTML = innerStrHead;
     // add event listeners for delete btns
     createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
     // add event listeners for edit btns

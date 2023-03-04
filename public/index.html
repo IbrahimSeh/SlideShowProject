@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="hr.css">
     <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="properitiesGallery.css">
     <title>Slide Show Project</title>
 </head>
 
@@ -104,9 +105,9 @@
                                 <h5>
                                     <div class="card-text">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="description"
-                                                id="descriptionToEditInPopup"></textarea>
-                                            <label for="descriptionToEditInPopup">Description</label>
+                                            <textarea class="form-control" placeholder="credit"
+                                                id="creditToEditInPopup"></textarea>
+                                            <label for="creditToEditInPopup">Credit</label>
                                         </div>
                                     </div>
                                 </h5>
@@ -184,334 +185,336 @@
                 <!-- gallery ,list ,carusel -->
 
                 <div id="propertiesGallery" class="d-none">
-                    <div class="row row-cols-1 row-cols-md-3 g-4" id="home-page-properties-gallery"></div>
-                </div>
-                <div id="propertiesList" class="d-none">
-                    <ul class="list-group" id="home-page-properties-list"></ul>
-                </div>
-                <div id="propertiesCarusel" class="carusel d-none">
-                    <div class="img-container" id="home-page-properties-carousel"></div>
-                    <div class="d-flex justify-content-around">
-                        <button type="button" class="btn btn-primary" id="back-carusel-btn">
-                            <i class="bi bi-arrow-left"></i>
-                        </button>
-                        <button type="button" class="btn btn-primary" id="next-carusel-btn">
-                            <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+                    <!-- <div class="row row-cols-1 row-cols-md-3 g-4" id="home-page-properties-gallery"></div> -->
+                    <div id="home-page-properties-gallery"></div>
 
-            </div>
-            <div id="about-us-page" class="d-none">
-                <div>
-                    <h1 class="pagetitle display-1">ABOUT US PAGE</h1>
                 </div>
             </div>
-            <div id="register-page" class="d-none">
-                <div>
-                    <h1 class="pagetitle display-1">SIGNUP PAGE</h1>
+            <div id="propertiesList" class="d-none">
+                <!-- <ul class="list-group"></ul> -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-dark">
+                        <thead id="home-page-properties-list-thead">
+                        </thead>
+                        <tbody id="home-page-properties-list-tbody">
+                        </tbody>
+                    </table>
                 </div>
-                <form onsubmit="event.preventDefault()">
-                    <section class="h-100 Register-Section">
-                        <div class="container py-5 h-100">
-                            <div class="row d-flex justify-content-center align-items-center h-100">
-                                <div class="col">
-                                    <div class="card card-registration my-4">
-                                        <div class="card-body p-md-5 text-black">
-                                            <div class="row">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                                    alt="Sample photo" class="img-fluid" id="Img-Register" />
-                                            </div>
-                                            <h3 class="mb-5 text-uppercase">client registration form</h3>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2">
-                                                    <h5 class="mb-2 text-uppercase">name</h5>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-outline">
-                                                        <input type="text" id="register-input-Fname"
-                                                            class="form-control form-control-lg"
-                                                            placeholder="First name" required />
-                                                        <label class="form-label" for="register-input-Fname">First name
-                                                            <span class="Red-star">*</span></label>
-                                                        <div class="alert alert-danger d-none" role="alert"
-                                                            id="register-alert-Fname">
-                                                            Name rules
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-outline">
-                                                        <input type="text" id="register-input-Lname"
-                                                            class="form-control form-control-lg" placeholder="Last name"
-                                                            required />
-                                                        <label class="form-label" for="register-input-Lname">Last name
-                                                            <span class="Red-star">*</span></label>
-                                                        <div class="alert alert-danger d-none" role="alert"
-                                                            id="register-alert-Lname">
-                                                        </div>
-                                                    </div>
-                                                </div>
+            </div>
+            <div id="propertiesCarusel" class="carusel d-none">
+                <div class="img-container" id="home-page-properties-carousel"></div>
+                <div class="d-flex justify-content-around">
+                    <button type="button" class="btn btn-primary" id="back-carusel-btn">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" id="next-carusel-btn">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-2">
-                                                        <h5 class="mb-2 text-uppercase">address</h5>
-                                                    </div>
+    </div>
+    <div id="about-us-page" class="d-none">
+        <div>
+            <h1 class="pagetitle display-1">ABOUT US PAGE</h1>
+        </div>
+    </div>
+    <div id="register-page" class="d-none">
+        <div>
+            <h1 class="pagetitle display-1">SIGNUP PAGE</h1>
+        </div>
+        <form onsubmit="event.preventDefault()">
+            <section class="h-100 Register-Section">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col">
+                            <div class="card card-registration my-4">
+                                <div class="card-body p-md-5 text-black">
+                                    <div class="row">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                            alt="Sample photo" class="img-fluid" id="Img-Register" />
+                                    </div>
+                                    <h3 class="mb-5 text-uppercase">client registration form</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <h5 class="mb-2 text-uppercase">name</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="register-input-Fname"
+                                                    class="form-control form-control-lg" placeholder="First name"
+                                                    required />
+                                                <label class="form-label" for="register-input-Fname">First name
+                                                    <span class="Red-star">*</span></label>
+                                                <div class="alert alert-danger d-none" role="alert"
+                                                    id="register-alert-Fname">
+                                                    Name rules
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-state"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="state name" />
-                                                            <label class="form-label"
-                                                                for="register-input-state">State</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-state">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-country"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="country name" />
-                                                            <label class="form-label"
-                                                                for="register-input-country">Country</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-country">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-city"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="city name" />
-                                                            <label class="form-label"
-                                                                for="register-input-city">City</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-city">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-street"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="street number" />
-                                                            <label class="form-label"
-                                                                for="register-input-street">Street</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-street">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-house"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="house number" />
-                                                            <label class="form-label" for="register-input-house">House
-                                                                Number</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-house">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-zipCode"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="zip Code" />
-                                                            <label class="form-label" for="register-input-zipCode">Zip
-                                                                Code</label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-zip">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-2">
-                                                        <h5 class="mb-2 text-uppercase">means of contact</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="email" id="register-input-email"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="name@example.com" required />
-                                                            <label class="form-label" for="register-input-email">Email
-                                                                <span class="Red-star">*</span></label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-email">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="text" id="register-input-phone"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="input phone" />
-                                                            <label class="form-label" for="register-input-phone">Phone
-                                                            </label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-phone">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-2">
-                                                        <h5 class="mb-2 text-uppercase">security</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="password" id="register-input-password"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="Password" required />
-                                                            <label class="form-label"
-                                                                for="register-input-password">Password
-                                                                <span class="Red-star">*</span></label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-password">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <div class="form-outline">
-                                                            <input type="password" id="register-input-Re-password"
-                                                                class="form-control form-control-lg"
-                                                                placeholder="Re password" required />
-                                                            <label class="form-label"
-                                                                for="register-input-Re-password">Re-Enter
-                                                                Password
-                                                                <span class="Red-star">*</span></label>
-                                                            <div class="alert alert-danger d-none" role="alert"
-                                                                id="register-alert-repassword">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3 form-check d-flex justify-content-center">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="register-checkbox-bussiness"
-                                                        placeholder="checkbox-bussiness" />
-                                                    <label class="form-check-label" for="register-checkbox-bussiness">
-                                                        <h6>Bussiness client</h6>
-                                                    </label>
-                                                </div>
-
-                                                <div class="d-flex justify-content-end pt-3">
-                                                    <button id="register-btn-resetAll" type="button"
-                                                        class="btn btn-light btn-lg">Reset all</button>
-                                                    <button id="register-btn-submit" type="button" disabled="true"
-                                                        class="btn btn-warning btn-lg ms-2">Submit
-                                                        form</button>
-                                                    <div id="toast"></div>
-                                                </div>
-
                                             </div>
                                         </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="register-input-Lname"
+                                                    class="form-control form-control-lg" placeholder="Last name"
+                                                    required />
+                                                <label class="form-label" for="register-input-Lname">Last name
+                                                    <span class="Red-star">*</span></label>
+                                                <div class="alert alert-danger d-none" role="alert"
+                                                    id="register-alert-Lname">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <h5 class="mb-2 text-uppercase">address</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-state"
+                                                        class="form-control form-control-lg" placeholder="state name" />
+                                                    <label class="form-label" for="register-input-state">State</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-state">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-country"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="country name" />
+                                                    <label class="form-label"
+                                                        for="register-input-country">Country</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-country">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-city"
+                                                        class="form-control form-control-lg" placeholder="city name" />
+                                                    <label class="form-label" for="register-input-city">City</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-city">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-street"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="street number" />
+                                                    <label class="form-label" for="register-input-street">Street</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-street">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-house"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="house number" />
+                                                    <label class="form-label" for="register-input-house">House
+                                                        Number</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-house">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-zipCode"
+                                                        class="form-control form-control-lg" placeholder="zip Code" />
+                                                    <label class="form-label" for="register-input-zipCode">Zip
+                                                        Code</label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-zip">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <h5 class="mb-2 text-uppercase">means of contact</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="email" id="register-input-email"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="name@example.com" required />
+                                                    <label class="form-label" for="register-input-email">Email
+                                                        <span class="Red-star">*</span></label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="register-input-phone"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="input phone" />
+                                                    <label class="form-label" for="register-input-phone">Phone
+                                                    </label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-phone">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <h5 class="mb-2 text-uppercase">security</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="password" id="register-input-password"
+                                                        class="form-control form-control-lg" placeholder="Password"
+                                                        required />
+                                                    <label class="form-label" for="register-input-password">Password
+                                                        <span class="Red-star">*</span></label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="password" id="register-input-Re-password"
+                                                        class="form-control form-control-lg" placeholder="Re password"
+                                                        required />
+                                                    <label class="form-label" for="register-input-Re-password">Re-Enter
+                                                        Password
+                                                        <span class="Red-star">*</span></label>
+                                                    <div class="alert alert-danger d-none" role="alert"
+                                                        id="register-alert-repassword">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 form-check d-flex justify-content-center">
+                                            <input type="checkbox" class="form-check-input"
+                                                id="register-checkbox-bussiness" placeholder="checkbox-bussiness" />
+                                            <label class="form-check-label" for="register-checkbox-bussiness">
+                                                <h6>Bussiness client</h6>
+                                            </label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button id="register-btn-resetAll" type="button"
+                                                class="btn btn-light btn-lg">Reset all</button>
+                                            <button id="register-btn-submit" type="button" disabled="true"
+                                                class="btn btn-warning btn-lg ms-2">Submit
+                                                form</button>
+                                            <div id="toast"></div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                    </section>
-                </form>
-            </div>
-
-            <div id="login-page" class="d-block">
-                <div>
-                    <h1 class="pagetitle display-1">LOGIN PAGE</h1>
-                </div>
-                <div>
-                    <h4 class="pagetitle ">welcome to slide show site ,You can view photos for sale or browse
-                        to buy
-                        photos
-                    </h4>
-                </div>
-                <form onsubmit="event.preventDefault()">
-                    <div class="mb-3">
-                        <label for="login-input-email" class="form-label">Email</label>
-                        <input type="email" class="form-control w-50" id="login-input-email"
-                            placeholder="Please enter you'r email" required>
-                        <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="login-input-password" class="form-label">Password</label>
-                        <input type="password" class="form-control w-50" id="login-input-password"
-                            placeholder="Please enter you'r password" required>
-                        <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
-                        </div>
-                    </div>
-                    <button type="button" id="login-btn-submit" class="btn btn-outline-primary mb-3"
-                        data-toggle="tooltip" data-placement="left" title="Submit when entering email & password">
-                        Submit
-                    </button>
-                    <p class="p-2 float-end">not registered yet ?
-                        <a class="nav-item" href="#" id="login-to-register-page"> Click here ...</a>
-                    </p>
-                </form>
-            </div>
-            <div id="user-page" class="d-none">
-                <div>
-                    <h1 class="pagetitle display-1">USER PAGE</h1>
-                </div>
-                <form onsubmit="event.preventDefault()">
-                </form>
-            </div>
+            </section>
+        </form>
+    </div>
 
-        </main>
-
-        <footer>
-            <div class="the-footer">
-                <div class="H5C3JS6">
-                    <ul>
-                        <li style="--color:#ef436b">
-                            <span class="base"></span>
-                            <span class="title">HTML5</span>
-                            <span class="icon">
-                                <ion-icon name="logo-html5"></ion-icon>
-                            </span>
-                        </li>
-                        <li style="--color:#ffce5c">
-                            <span class="base"></span>
-                            <span class="title">CSS3</span>
-                            <span class="icon">
-                                <ion-icon name="logo-css3"></ion-icon>
-                            </span>
-                        </li>
-                        <li style="--color:#05c770">
-                            <span class="base"></span>
-                            <span class="title">JAVASCRIPT</span>
-                            <span class="icon">
-                                <ion-icon name="logo-javascript"></ion-icon>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <p class="copyright">Website design and construction by Ibrahim Seh ©</p>
-                <div class="social">
-                    <a href="https://www.facebook.com/abrahem.seh">
-                        <i class="icon ion-social-facebook"></i>
-                    </a>
-                    <a href="https://wa.me/+972522740589?text=Welcome%20every%20body">
-                        <i class="icon ion-social-whatsapp"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ibrahim-seh-23b935157/">
-                        <i class="icon ion-social-linkedin"></i>
-                    </a>
+    <div id="login-page" class="d-block">
+        <div>
+            <h1 class="pagetitle display-1">LOGIN PAGE</h1>
+        </div>
+        <div>
+            <h4 class="pagetitle ">welcome to slide show site ,You can view photos for sale or browse
+                to buy
+                photos
+            </h4>
+        </div>
+        <form onsubmit="event.preventDefault()">
+            <div class="mb-3">
+                <label for="login-input-email" class="form-label">Email</label>
+                <input type="email" class="form-control w-50" id="login-input-email"
+                    placeholder="Please enter you'r email" required>
+                <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
                 </div>
             </div>
-        </footer>
+            <div class="mb-3">
+                <label for="login-input-password" class="form-label">Password</label>
+                <input type="password" class="form-control w-50" id="login-input-password"
+                    placeholder="Please enter you'r password" required>
+                <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
+                </div>
+            </div>
+            <button type="button" id="login-btn-submit" class="btn btn-outline-primary mb-3" data-toggle="tooltip"
+                data-placement="left" title="Submit when entering email & password">
+                Submit
+            </button>
+            <p class="p-2 float-end">not registered yet ?
+                <a class="nav-item" href="#" id="login-to-register-page"> Click here ...</a>
+            </p>
+        </form>
+    </div>
+    <div id="user-page" class="d-none">
+        <div>
+            <h1 class="pagetitle display-1">USER PAGE</h1>
+        </div>
+        <form onsubmit="event.preventDefault()">
+        </form>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="the-footer">
+            <div class="H5C3JS6">
+                <ul>
+                    <li style="--color:#ef436b">
+                        <span class="base"></span>
+                        <span class="title">HTML5</span>
+                        <span class="icon">
+                            <ion-icon name="logo-html5"></ion-icon>
+                        </span>
+                    </li>
+                    <li style="--color:#ffce5c">
+                        <span class="base"></span>
+                        <span class="title">CSS3</span>
+                        <span class="icon">
+                            <ion-icon name="logo-css3"></ion-icon>
+                        </span>
+                    </li>
+                    <li style="--color:#05c770">
+                        <span class="base"></span>
+                        <span class="title">JAVASCRIPT</span>
+                        <span class="icon">
+                            <ion-icon name="logo-javascript"></ion-icon>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <p class="copyright">Website design and construction by Ibrahim Seh ©</p>
+            <div class="social">
+                <a href="https://www.facebook.com/abrahem.seh">
+                    <i class="icon ion-social-facebook"></i>
+                </a>
+                <a href="https://wa.me/+972522740589?text=Welcome%20every%20body">
+                    <i class="icon ion-social-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ibrahim-seh-23b935157/">
+                    <i class="icon ion-social-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
     </div>
 
