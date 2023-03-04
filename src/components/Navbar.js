@@ -1,7 +1,7 @@
 import checkIfBussiness from "../utils/checkIfBussiness.js";
 import checkIfConnected from "../utils/checkIfConnected.js";
 import getNextPropertyId from "../utils/getNextPropertyId.js";
-
+import openModal from "../services/modal.js";
 let nextPropertyId;
 let isBussiness;
 let isConnected;
@@ -28,11 +28,11 @@ const initializeNavbar = (addNewImgPopup) => {
     } else {
         navAddNewPropertyLink.classList.remove("d-none");
         navAddNewPropertyLink.classList.add("d-flex");
+        navAddNewPropertyLink.addEventListener("click", () => {
+            // addNewImgPopup();
+            openModal();
+        });
     }
-
-    navAddNewPropertyLink.addEventListener("click", () => {
-        addNewImgPopup();
-    });
 };
 
 export default initializeNavbar;

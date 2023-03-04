@@ -1,0 +1,39 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(13, 13, 13, 0.95);
+}
+
+.add-img-modal {
+    padding: 15px;
+    width: 90vw;
+    height: 75vh;
+    margin: 30px;
+    background-color: #1117c473;
+    color: black;
+    font-weight: 600;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #1117c473;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #f2f2f2;
+    text-decoration: none;
+    cursor: pointer;
+}
