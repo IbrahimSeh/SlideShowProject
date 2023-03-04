@@ -2,27 +2,32 @@ import LinksNavBarIdobj from "./modelsOfData/linksNavBar.js";
 import PagesIdObj from "./modelsOfData/pages.js";
 import { switchPages } from "./routes/switchRouter.js";
 import initializeNavbar from "./components/Navbar.js";
+import { addNewImgPopup } from "./components/addNewImgPopup.js";
 import "./initialData/initialData.js";
 import "./pages/RegisterPg.js";
 import "./pages/LoginPage.js";
-import { showNewPopup } from "./pages/HomePage.js";
+import checkIfConnected from "./utils/checkIfConnected.js";
+// import { showNewPopup } from "./pages/HomePage.js";
 
 const HomeNavLink = document.getElementById(LinksNavBarIdobj.homeLinkNavBar);
 const AboutusNavLink = document.getElementById(LinksNavBarIdobj.aboutusLinkNavBar);
 const RegisterNavLink = document.getElementById(LinksNavBarIdobj.registerLinkNavBar);
 const LoginNavLink = document.getElementById(LinksNavBarIdobj.loginLinkNavBar);
 const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
-const LogoutNavLink = document.getElementById(LinksNavBarIdobj.LogoutNavLink);
+const LogoutNavLink = document.getElementById(LinksNavBarIdobj.logoutLinkNavBar);
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
 
 window.addEventListener("load", () => {
-    initializeNavbar(showNewPopup);
+    console.log('in app window addEventListener load');
+    initializeNavbar(addNewImgPopup);
     if (checkIfConnected()) {
-        let user = localStorage.getItem("token");
+        let user = localStorage.getItem("tokenUser");
         user = JSON.parse(user);
-        navEditProfilePage.innerText = user.name;
+        UserNavLink.innerText = user.Fname;
+        switchPages(PagesIdObj.homePage);
     }
 });
+
 
 
 HomeNavLink.addEventListener("click", () => {
@@ -40,9 +45,10 @@ LoginNavLink.addEventListener("click", () => {
 UserNavLink.addEventListener("click", () => {
     switchPages(PagesIdObj.userPage);
 });
-// LogoutNavLink.addEventListener("click", () => {
-//     switchPages(PagesIdObj.loginPage);
-// });
+LogoutNavLink.addEventListener("click", () => {
+    localStorage.removeItem("tokenUser");
+    location.reload();
+});
 LogintoRegister.addEventListener("click", () => {
     switchPages(PagesIdObj.registerPage);
 });

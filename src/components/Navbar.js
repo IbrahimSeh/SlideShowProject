@@ -12,7 +12,7 @@ let navAddNewPropertyLink;
 const userBeforeLogin = document.getElementById("userBeforeLogin");
 const userAfterLogin = document.getElementById("userAfterLogin");
 
-const initializeNavbar = (showPopupFromApp) => {
+const initializeNavbar = (addNewImgPopup) => {
     nextPropertyId = getNextPropertyId();
     isBussiness = checkIfBussiness();
     isConnected = checkIfConnected();
@@ -20,14 +20,17 @@ const initializeNavbar = (showPopupFromApp) => {
         userBeforeLogin.classList.add("d-none");
         userAfterLogin.classList.remove("d-none");
     }
-    showPopup = showPopupFromApp;
+    // showPopup = showPopupFromApp;
     /* nav */
     navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
     if (!isBussiness) {
         navAddNewPropertyLink.classList.add("d-none");
+    } else {
+        navAddNewPropertyLink.classList.remove("d-none");
+        navAddNewPropertyLink.classList.add("d-flex");
     }
     navAddNewPropertyLink.addEventListener("click", () => {
-        // showPopup();
+        addNewImgPopup();
     });
 };
 

@@ -2,6 +2,9 @@ import validateEmail from "../validations/validateEmail.js";
 import validatePassword from "../validations/validatePassword.js";
 import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
+import initializeNavbar from "../components/Navbar.js";
+import LinksNavBarIdobj from "../modelsOfData/linksNavBar.js";
+const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 
 const loginInputEmail = document.querySelector("#login-input-email");
 const loginInputPassword = document.querySelector("#login-input-password");
@@ -80,6 +83,9 @@ loginSubmit.addEventListener("click", () => {
             zipcode: user.zipcode,
         })
     );
+
+    initializeNavbar();
+    UserNavLink.innerText = user.Fname;
+    console.log('to home page from login');
     switchPages(PagesIdObj.homePage);
-    //location.reload();  refresh the page
 });

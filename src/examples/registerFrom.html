@@ -8,154 +8,17 @@
     <link rel="stylesheet" href="registerFrom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>register form</title>
 </head>
 
 <body>
-    <section class="h-100 Register-Section">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
-                    <div class="card card-registration my-4">
-                        <div class="card-body p-md-5 text-black">
-                            <div class="row">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                    alt="Sample photo" class="img-fluid" id="Img-Register" />
-                            </div>
-                            <h3 class="mb-5 text-uppercase">client registration form</h3>
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <h5 class="mb-2 text-uppercase">name</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1m">First name <span
-                                                class="Red-star">*</span></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1n" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1n">Last name <span
-                                                class="Red-star">*</span></label>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="search-box">
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+    </div>
 
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <h5 class="mb-2 text-uppercase">address</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">State</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">Country</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">City</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">Street</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">House Number</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">Zip Code</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <h5 class="mb-2 text-uppercase">means of contact</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1m">Email <span
-                                                class="Red-star">*</span></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1n" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1n">Phone </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <h5 class="mb-2 text-uppercase">security</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1m">Password <span
-                                                class="Red-star">*</span></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-outline">
-                                        <input type="text" id="form3Example1n" class="form-control form-control-lg"
-                                            required />
-                                        <label class="form-label" for="form3Example1n">Re-Enter Password <span
-                                                class="Red-star">*</span></label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 form-check text-center">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                <label class="form-check-label" for="exampleCheck1">
-                                    <h6>Bussiness client</h6>
-                                </label>
-                            </div>
-
-                            <div class="d-flex justify-content-end pt-3">
-                                <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                                <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
