@@ -86,23 +86,16 @@
                 <div>
                     <h3 class="middletitle">here you can look at you'r pictures throw slide show or list</h3>
                 </div>
-                <!-- editPropertiesPopup -->
-                <!-- <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="popupEditImg"> -->
-                <!-- editPropertiesPopupChild -->
-                <!-- <div class="popup-div" id="popupEditImgChild"> -->
-                <div id="popupEditImg"
-                    class="row popup-wrapper d-flex justify-content-center align-items-center d-none">
-                    <div id="popupEditImgChild" class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 popup-div">
-                        <div>
-                            <h1 class="pagetitle display-1">EDIT PIC FORM</h1>
-                        </div>
-                        <div>
-                            <h3 class="middletitle">here you can edit the selected
-                                picture
-                            </h3>
-                        </div>
+                <!-- popup edit image -->
+                <div id="popupEditImg" class="row popup-wrapper justify-content-md-center d-none">
+                    <div>
+                        <h1 class="pagetitle display-1">EDIT PICTURE PAGE</h1>
+                    </div>
+                    <div>
+                        <h3 class="middletitle">here you can edit the selected picture</h3>
+                    </div>
+                    <div id="popupEditImgChild" class="col-8 popup-div">
                         <form class="mx-1 mx-md-4">
-
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="popup-input-url">Url</label>
@@ -113,50 +106,37 @@
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="popup-input-url">Alt</label>
-                                    <input type="email" id="popup-input-alt" class="form-control" />
+                                    <input type="text" id="popup-input-alt" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="popup-input-credit">Credit</label>
-                                    <input type="password" id="popup-input-credit" class="form-control" />
+                                    <input type="text" id="popup-input-credit" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="popup-input-price">Price</label>
-                                    <input type="password" id="popup-input-price" class="form-control" />
+                                    <input type="text" id="popup-input-price" class="form-control" />
                                 </div>
                             </div>
                             <div class="card-body">
-                                <button type="button" class="btn btn-success" id="saveBtn-EditImgPopup">
-                                    <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>
-                                    Save
-                                </button>
-                                <button type="button" class="btn btn-danger" id="cancelBtn-EditImgPopup"
-                                    data-toggle="tooltip" data-placement="left" title="Use ESC to close">
-                                    <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>
-                                    Cancel
-                                </button>
+                                <button id="saveBtn-EditImgPopup" type="button"
+                                    class="btn btn-primary btn-lg btn-block w-100 m-1">
+                                    <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>Submit</button>
+                                <button id="cancelBtn-EditImgPopup" type="button"
+                                    class="btn btn-secondary btn-lg btn-block w-100 m-1">
+                                    <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>Cancel</button>
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
+                    <div class="col-4 ">
                         <img id="currentImgInPopup" src="" class="img-fluid" alt="Current image">
-
                     </div>
                 </div>
-                <!--</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> -->
-                <!-- </div> -->
-                <!-- </div> -->
 
                 <!-- icons of gallery ,list ,carusel ,ascendant ,descendant -->
                 <div class="d-flex justify-content-between mb-2">

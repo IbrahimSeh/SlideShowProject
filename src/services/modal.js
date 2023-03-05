@@ -25,6 +25,8 @@ const openModal = () => {
 
         newProperty = new imgProperty(getNextPropertyId(), "", 0, "", "");
         newProperty.name = modalInputAlt.value;
+
+        console.log('modalInputAlt.value = ' + modalInputAlt.value);
         newProperty.price = modalInputPrice.value;
         newProperty.credit = modalInputCredit.value;
         newProperty.imgUrl = modalInputUrl.value;
@@ -42,6 +44,7 @@ const openModal = () => {
         propertiesArr = [...originalPropertiesArr];
         editProperty();
         modalDiv.style.display = "none";
+        location.reload();
     });
 
 

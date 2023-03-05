@@ -10,7 +10,7 @@ const urlToEditInPopup = document.getElementById(
     "popup-input-url"
 );
 const altToEditInPopup = document.getElementById(
-    "popup-input-url"
+    "popup-input-alt"
 );
 const creditToEditInPopup = document.getElementById(
     "popup-input-credit"
