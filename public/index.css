@@ -74,10 +74,11 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #0000008d;
+    background-color: rgba(201, 191, 207, 0.94);
     top: 0;
     left: 0;
     z-index: 999;
+    padding: 30px;
 }
 
 .popup-wrapper div div {

@@ -1,5 +1,5 @@
 const getNextPropertyId = () => {
-    let nextPropertyId = localStorage.getItem("nextpropertyId");
+    let nextPropertyId = localStorage.getItem("nextPropertyId");
     if (!nextPropertyId) {
         return 1;
     }

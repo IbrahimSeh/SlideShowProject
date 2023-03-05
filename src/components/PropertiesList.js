@@ -56,7 +56,7 @@ const createItem = (name, credit, price, imgUrl, id) => {
   </button>
   </td>
   <td><button type="button" class="btn btn-warning w-100" id="propertyListDeleteBtn-${id}">
-    <i class="bi bi-trash3"></i> Edit
+    <i class="bi bi-trash3"></i> Delete
   </button>
   </td>
   `;

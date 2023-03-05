@@ -5,17 +5,18 @@ let selectedProperty, editProperty;
 const currentImgInPopup = document.getElementById(
     "currentImgInPopup"
 );
-const nameToEditInPopup = document.getElementById(
-    "nameToEditInPopup"
+
+const urlToEditInPopup = document.getElementById(
+    "popup-input-url"
+);
+const altToEditInPopup = document.getElementById(
+    "popup-input-url"
 );
 const creditToEditInPopup = document.getElementById(
-    "creditToEditInPopup"
+    "popup-input-credit"
 );
 const priceToEditInPopup = document.getElementById(
-    "priceToEditInPopup"
-);
-const imgToEditInPopup = document.getElementById(
-    "imgToEditInPopup"
+    "popup-input-price"
 );
 const popupEditImg = document.getElementById("popupEditImg");
 
@@ -29,11 +30,11 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
         selectedProperty = new imgProperty(getNextPropertyId(), "", 0, "", "");
     }
     editProperty = editPropertyFromHomePage;
-    currentImgInPopup.src = selectedProperty.imgUrl;
-    nameToEditInPopup.value = selectedProperty.name;
+    currentImgInPopup.src = selectedProperty.imgUrl;//current 
+    altToEditInPopup.value = selectedProperty.name;
     creditToEditInPopup.value = selectedProperty.credit;
     priceToEditInPopup.value = selectedProperty.price;
-    imgToEditInPopup.value = selectedProperty.imgUrl;
+    urlToEditInPopup.value = selectedProperty.imgUrl;//new
     showPopup();
 };
 
@@ -46,6 +47,7 @@ const hidePopup = () => {
 };
 
 window.addEventListener("load", () => {
+
     popupEditImg.addEventListener("click", (ev) => {
         if (
             ev.target.id !== "popupEditImg" &&
@@ -56,18 +58,26 @@ window.addEventListener("load", () => {
         }
         hidePopup();
     });
+    window.addEventListener("keydown", (event) => {
+        console.log('cancelBtn-EditImgPopup by ESC');
+        if (event.key === 'Escape') {
+            hidePopup();
+        }
+    });
     document
         .getElementById("saveBtn-EditImgPopup")
         .addEventListener("click", () => {
-            selectedProperty.name = nameToEditInPopup.value;
+            selectedProperty.name = altToEditInPopup.value;
             selectedProperty.credit = creditToEditInPopup.value;
             selectedProperty.price = priceToEditInPopup.value;
-            selectedProperty.imgUrl = imgToEditInPopup.value;
+            selectedProperty.imgUrl = urlToEditInPopup.value;
             editProperty(selectedProperty);
             hidePopup();
         });
-    imgToEditInPopup.addEventListener("input", () => {
-        currentImgInPopup.src = imgToEditInPopup.value;
+
+
+    urlToEditInPopup.addEventListener("input", () => {
+        currentImgInPopup.src = urlToEditInPopup.value;
     });
 });
 

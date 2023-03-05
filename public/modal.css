@@ -11,6 +11,10 @@
     background-color: rgb(13, 13, 13, 0.95);
 }
 
+#midTitModal {
+    margin: 10px 0 10px 30px;
+}
+
 .add-img-modal {
     padding: 15px;
     width: 90vw;
