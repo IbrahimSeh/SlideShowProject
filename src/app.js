@@ -7,6 +7,7 @@ import "./initialData/initialData.js";
 import "./pages/RegisterPg.js";
 import "./pages/LoginPage.js";
 import "./pages/UserPage.js";
+import { showToastHome } from "./services/toast.js";
 
 import checkIfConnected from "./utils/checkIfConnected.js";
 // import { showNewPopup } from "./pages/HomePage.js";
@@ -18,15 +19,20 @@ const LoginNavLink = document.getElementById(LinksNavBarIdobj.loginLinkNavBar);
 const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 const LogoutNavLink = document.getElementById(LinksNavBarIdobj.logoutLinkNavBar);
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
-
+let myInterval;
 window.addEventListener("load", () => {
-    // console.log('in app window addEventListener load');
+    clearInterval(myInterval);
     initializeNavbar(addNewImgPopup);
     if (checkIfConnected()) {
+        console.log('load in if');
         let user = localStorage.getItem("tokenUser");
         user = JSON.parse(user);
         UserNavLink.innerText = user.Fname;
+        HomeNavLink.classList.remove("disable-link");
         switchPages(PagesIdObj.homePage);
+    }
+    else {
+        showToastHome("You will have to log in initially as business or normal", false);
     }
 });
 

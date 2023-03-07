@@ -6,7 +6,7 @@ import validatePhone from "../validations/validatePhone.js";
 import validatePassword from "../validations/validatePassword.js";
 import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
-import { showToastRegister, showToastUser } from "../services/toast.js";
+import { showToastRegister } from "../services/toast.js";
 import validateAddress from "../validations/validateAddress.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);

@@ -79,7 +79,7 @@ const initializeBtns = () => {
                 // console.log("item.name", item.name, " reg", reg);
                 return reg;
             });
-            updateDisplays();
+            updatePropertiesGalleryAndList();
         });
 };
 
@@ -108,6 +108,11 @@ const displayMode = (toDisplay) => {
     toDisplay.classList.add("d-block");
     //this is what we displaying now
     displayNow = toDisplay;
+};
+
+const updatePropertiesGalleryAndList = () => {
+    updatePropertiesGallery(propertiesArr); // update gallery
+    updatePropertiesList(propertiesArr); // update list
 };
 
 const updateDisplays = () => {

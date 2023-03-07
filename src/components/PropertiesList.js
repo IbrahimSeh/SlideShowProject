@@ -36,6 +36,7 @@ const completeHead = () => {
                                 <th colspan="2" scope="col">Pic</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Credit</th>
+                                <th scope="col">Buy</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
                             </tr>`;
@@ -45,6 +46,7 @@ const completeHead = () => {
                                 <th colspan="2" scope="col">Pic</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Credit</th>
+                                <th scope="col">Buy</th>
                             </tr>`;
     return `${isBussiness ? BussinessBtn : noBussinessBtn}`;
 };
@@ -70,6 +72,11 @@ const createItem = (name, credit, price, imgUrl, id) => {
                 </td>
                 <td>${name}</td>
                 <td>${credit}</td>
+                <td><button type="button" class="btn btn-warning w-100">
+    <img src="../../public/assets/images/shopping-cart.png" alt="" style="width: 30px; height: 20px;"> Buy
+  </button>
+  </td>
+                
                 
                 ${isBussiness ? BussinessBtn : ""}
             </tr>

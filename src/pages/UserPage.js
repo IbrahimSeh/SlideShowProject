@@ -1,6 +1,6 @@
 import UserInputsId from "../modelsOfData/userData.js";
 import checkIfConnected from "../utils/checkIfConnected.js";
-import { showToastRegister, showToastUser } from "../services/toast.js";
+import { showToastUser } from "../services/toast.js";
 import validateName from "../validations/validateName.js";
 import validateEmail from "../validations/validateEmail.js";
 import validatePhone from "../validations/validatePhone.js";

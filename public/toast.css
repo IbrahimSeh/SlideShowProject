@@ -6,8 +6,17 @@
     border-radius: 0.3rem;
 }
 
+#homeToast {
+    font-weight: bold;
+    text-align: center;
+    margin-left: 88px;
+    color: #3b2fe2;
+
+}
+
 .success {
     background-color: #3b2fe2;
+    border-radius: 5px;
 }
 
 .error {
@@ -19,7 +28,7 @@
     background-color: rgb(228, 12, 12);
     /* width: 100%; */
     height: 0.1rem;
-    animation: toast-slider 3s linear;
+    animation: toast-slider 10s linear;
     padding: 0;
 }
 
