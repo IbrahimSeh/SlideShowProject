@@ -1,8 +1,8 @@
-const toast = document.getElementById("toast");
-let id = 1;
-const showToast = (msg, success = true) => {
-    let thisId = id++;
-    toast.innerHTML += `<div id="toastMsg-${thisId}" class="${success ? "success" : "error"
+const registerToast = document.getElementById("registerToast");
+let idRgst = 1;
+const showToastRegister = (msg, success = true) => {
+    let thisId = idRgst++;
+    registerToast.innerHTML += `<div id="toastMsg-${thisId}" class="${success ? "success" : "error"
         }">${msg}
   <div class="toast-timer"></div>
   </div>`;
@@ -11,4 +11,16 @@ const showToast = (msg, success = true) => {
     }, 3000);
 };
 
-export default showToast;
+const userToast = document.getElementById("userToast");
+let idUsr = 1;
+const showToastUser = (msg, success = true) => {
+    let thisId = idUsr++;
+    userToast.innerHTML += `<div id="toastMsg-${thisId}" class="${success ? "success" : "error"
+        }">${msg}
+  <div class="toast-timer"></div>
+  </div>`;
+    setTimeout(() => {
+        document.getElementById(`toastMsg-${thisId}`).remove();
+    }, 3000);
+};
+export { showToastRegister, showToastUser };

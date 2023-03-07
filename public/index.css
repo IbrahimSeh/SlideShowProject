@@ -78,6 +78,14 @@
     width: 100%;
 }
 
+#user-page {
+    background-image: url(assets/images/userbgc.jpg);
+}
+
+#user-profile-img {
+    margin-bottom: 15px;
+}
+
 @media (max-width: 991px) {
     .responsive-mt {
         margin-top: 0.9rem;

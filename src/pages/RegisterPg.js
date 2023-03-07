@@ -7,7 +7,7 @@ import validatePhone from "../validations/validatePhone.js";
 import validatePassword from "../validations/validatePassword.js";
 import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
-import showToast from "../services/toast.js";
+import { showToastRegister, showToastUser } from "../services/toast.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);
 const inputLName = document.getElementById(RegisterInputsId.Lname);
@@ -288,7 +288,7 @@ inputSubmit.addEventListener("click", () => {
         return;
     }
     if (inputPassword.value !== inputRePassword.value) {
-        showToast("password & re-password doesn't match", false);
+        showToastRegister("password & re-password doesn't match", false);
         return;
     }
 
@@ -332,7 +332,7 @@ inputSubmit.addEventListener("click", () => {
         for (let user of users) {
             if (user.email === inputEmail.value) {
                 //display msg - email already exists
-                showToast("Email already exists", false);
+                showToastRegister("Email already exists", false);
                 return;
             }
         }
@@ -342,3 +342,5 @@ inputSubmit.addEventListener("click", () => {
     }
     switchPages(PagesIdObj.loginPage);
 });
+
+export { checkNameInput, checkPasswordInput, checkEmailInput, checkPhoneInput };

@@ -6,6 +6,8 @@ import { addNewImgPopup } from "./components/addNewImgPopup.js";
 import "./initialData/initialData.js";
 import "./pages/RegisterPg.js";
 import "./pages/LoginPage.js";
+import "./pages/UserPage.js";
+
 import checkIfConnected from "./utils/checkIfConnected.js";
 // import { showNewPopup } from "./pages/HomePage.js";
 
