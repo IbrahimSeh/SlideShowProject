@@ -51,7 +51,6 @@ const completeHead = () => {
     return `${isBussiness ? BussinessBtn : noBussinessBtn}`;
 };
 const createItem = (name, credit, price, imgUrl, id) => {
-    // console.log('createItem ' + name, credit, img, id);
     const BussinessBtn = `
    <td><button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
     <i class="bi bi-pencil-square"></i> Edit

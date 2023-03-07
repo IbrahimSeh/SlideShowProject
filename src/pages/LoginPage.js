@@ -1,7 +1,6 @@
 import validateEmail from "../validations/validateEmail.js";
 import validatePassword from "../validations/validatePassword.js";
-import { switchPages } from "../routes/switchRouter.js";
-import PagesIdObj from "../modelsOfData/pages.js";
+import { showToastLogin } from "../services/toast.js";
 import initializeNavbar from "../components/Navbar.js";
 import LinksNavBarIdobj from "../modelsOfData/linksNavBar.js";
 import { addNewImgPopup } from "../components/addNewImgPopup.js";
@@ -62,7 +61,7 @@ loginSubmit.addEventListener("click", () => {
             item.password === loginInputPassword.value
     );
     if (!user) {
-        console.log("invalid email and/or password");
+        showToastLogin("invalid email and/or password", false);
         return;
     }
     //remember who connected
@@ -87,7 +86,5 @@ loginSubmit.addEventListener("click", () => {
 
     initializeNavbar(addNewImgPopup);
     UserNavLink.innerText = user.Fname + " " + user.Lname;
-    console.log('to home page from login');
-    // switchPages(PagesIdObj.homePage);
     location.reload();
 });

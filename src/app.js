@@ -19,16 +19,16 @@ const LoginNavLink = document.getElementById(LinksNavBarIdobj.loginLinkNavBar);
 const UserNavLink = document.getElementById(LinksNavBarIdobj.userLinkNavBar);
 const LogoutNavLink = document.getElementById(LinksNavBarIdobj.logoutLinkNavBar);
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
-let myInterval;
+const page404ToLogin = document.getElementById(LinksNavBarIdobj.page404ToLogin);
+
+
 window.addEventListener("load", () => {
-    clearInterval(myInterval);
     initializeNavbar(addNewImgPopup);
     if (checkIfConnected()) {
-        console.log('load in if');
         let user = localStorage.getItem("tokenUser");
         user = JSON.parse(user);
         UserNavLink.innerText = user.Fname;
-        HomeNavLink.classList.remove("disable-link");
+        // HomeNavLink.classList.remove("disable-link");
         switchPages(PagesIdObj.homePage);
     }
     else {
@@ -39,7 +39,11 @@ window.addEventListener("load", () => {
 
 
 HomeNavLink.addEventListener("click", () => {
-    switchPages(PagesIdObj.homePage);
+    if (!checkIfConnected()) {
+        switchPages(PagesIdObj.page404);
+    } else {
+        switchPages(PagesIdObj.homePage);
+    }
 });
 AboutusNavLink.addEventListener("click", () => {
     switchPages(PagesIdObj.aboutPage);
@@ -59,4 +63,7 @@ LogoutNavLink.addEventListener("click", () => {
 });
 LogintoRegister.addEventListener("click", () => {
     switchPages(PagesIdObj.registerPage);
+});
+page404ToLogin.addEventListener("click", () => {
+    switchPages(PagesIdObj.loginPage);
 });

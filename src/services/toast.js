@@ -24,6 +24,19 @@ const showToastUser = (msg, success = true) => {
     }, 3000);
 };
 
+const loginToast = document.getElementById("loginToast");
+let idLogin = 1;
+const showToastLogin = (msg, success = true) => {
+    let thisId = idLogin++;
+    loginToast.innerHTML += `<div id="toastMsg-${thisId}" class="${success ? "success" : "error"
+        }">${msg}
+  <div class="toast-timer"></div>
+  </div>`;
+    setTimeout(() => {
+        document.getElementById(`toastMsg-${thisId}`).remove();
+    }, 3000);
+};
+
 const homeToast = document.getElementById("homeToast");
 let idHome = 1;
 const showToastHome = (msg, success = true) => {
@@ -36,4 +49,4 @@ const showToastHome = (msg, success = true) => {
         document.getElementById(`toastMsg-${thisId}`).remove();
     }, 3000);
 };
-export { showToastRegister, showToastUser, showToastHome };
+export { showToastRegister, showToastUser, showToastHome, showToastLogin };

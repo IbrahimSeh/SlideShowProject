@@ -1,10 +1,14 @@
 let propertiesArr;
 let carouselDiv;
+let creditLabel;
 let showIdx; //index(array) of the image that we display now
 let animationStarted;
+let imgToShow, imgToHide;
 //this function will transfer data from homepage to this page
 const initialPropertiesCarousel = (propertiesArrFromHomePage) => {
     carouselDiv = document.getElementById("home-page-properties-carousel");
+    creditLabel = document.getElementById("img-caption");
+
     initializeBtns();
     updatePropertiesCarousel(propertiesArrFromHomePage);
 };
@@ -18,6 +22,7 @@ const updatePropertiesCarousel = (propertiesArrFromHomePage) => {
     showIdx = 0; //starting index
     animationStarted = 0; //we waiting for 0 animations
     propertiesArr = propertiesArrFromHomePage;
+    creditLabel.innerText = propertiesArr[0].credit;
     createCarousel();
 };
 
@@ -26,12 +31,14 @@ const initializeBtns = () => {
         if (animationStarted !== 0) {
             return;
         }
+        creditLabel.innerText = "";
         animationStarted = 2;
         let prevIdx = showIdx - 1;
         if (prevIdx < 0) {
             prevIdx = propertiesArr.length - 1; //last image
         }
-        let imgToHide = document.querySelector(
+        creditLabel.innerText = propertiesArr[prevIdx].credit;
+        imgToHide = document.querySelector(
             `.img-container > img:nth-child(${showIdx + 1})`
         );
         imgToHide.classList.add("fade-out");
@@ -41,8 +48,10 @@ const initializeBtns = () => {
             imgToHide.classList.remove("fade-out");
             animationStarted--;
         };
+
         imgToHide.addEventListener("animationend", hideImgAnim);
-        let imgToShow = document.querySelector(
+
+        imgToShow = document.querySelector(
             `.img-container > img:nth-child(${prevIdx + 1})`
         );
         imgToShow.classList.remove("opacity-0");
@@ -50,22 +59,19 @@ const initializeBtns = () => {
         imgToShow.addEventListener(
             "animationend",
             () => {
-                // imgToShow.classList.remove("opacity-0");
                 imgToShow.classList.remove("fade-in");
                 animationStarted--;
             },
             { once: true }
         );
-        // showIdx++;
-        // if (showIdx >= propertiesArr.length) {
-        //   showIdx = 0;
-        // }
         showIdx = prevIdx;
     });
+
     document.getElementById("next-carusel-btn").addEventListener("click", () => {
         if (animationStarted !== 0) {
             return;
         }
+        creditLabel.innerText = "";
         animationStarted = 2; // the number should be as the number of the animations that we waiting for
         let nextIdx = showIdx + 1;
         //showIdx = index of image to hide
@@ -78,6 +84,7 @@ const initializeBtns = () => {
             */
             nextIdx = 0;
         }
+        creditLabel.innerText = propertiesArr[nextIdx].credit;
         let imgToHide = document.querySelector(
             `.img-container > img:nth-child(${showIdx + 1})`
         ); //children start from 1
@@ -97,16 +104,11 @@ const initializeBtns = () => {
         imgToShow.addEventListener(
             "animationend",
             () => {
-                // imgToShow.classList.remove("opacity-0");
                 imgToShow.classList.remove("fade-in");
                 animationStarted--;
             },
             { once: true }
         );
-        // showIdx++;
-        // if (showIdx >= propertiesArr.length) {
-        //   showIdx = 0;
-        // }
         showIdx = nextIdx;
     });
 };
@@ -115,6 +117,7 @@ const createItem = (name, img) => {
     //opacity-0 hide image
     return `
     <img src="${img}" alt="${name}" class="opacity-0" />
+    
 `;
 };
 

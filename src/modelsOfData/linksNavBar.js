@@ -7,6 +7,7 @@ const LinksNavBarIdobj = {
     userLinkNavBar: "nav-edit-user-page",
     logoutLinkNavBar: "nav-logout",
     loginToRegister: "login-to-register-page",
+    page404ToLogin: "404page-to-login",
 };
 
 export default LinksNavBarIdobj;

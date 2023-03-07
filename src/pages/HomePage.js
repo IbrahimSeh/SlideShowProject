@@ -76,7 +76,6 @@ const initializeBtns = () => {
             let regex = new RegExp("^" + ev.target.value, "i");
             propertiesArr = originalPropertiesArr.filter((item) => {
                 let reg = regex.test(item.name);
-                // console.log("item.name", item.name, " reg", reg);
                 return reg;
             });
             updatePropertiesGalleryAndList();
@@ -98,7 +97,7 @@ const displayMode = (toDisplay) => {
             document.getElementById("search-div").classList.add("d-none");
             break;
         default:
-            console.log('homepage.js displayMode default page 404');
+            console.log('error');
     }
     // hide what we currently showing
     displayNow.classList.remove("d-block");

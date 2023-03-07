@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="./assets/images/SlideShowImgIcon2.png">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="aboutus.css">
     <link rel="stylesheet" href="registerFrom.css">
     <link rel="stylesheet" href="toast.css">
     <link rel="stylesheet" href="search.css">
@@ -41,8 +42,8 @@
 
                 <div class="container-fluid">
 
-                    <a class="navbar-brand disable-link" href="#" id="nav-home-link" data-toggle="tooltip"
-                        data-placement="left" title="To Home Page">
+                    <a class="navbar-brand" href="#" id="nav-home-link" data-toggle="tooltip" data-placement="left"
+                        title="To Home Page">
                         <img id="imgLogo" src="./assets/images/homePageIcon.jpg" alt="logo">
                     </a>
 
@@ -199,12 +200,13 @@
                 </div>
                 <div id="propertiesCarusel" class="carusel d-none">
                     <div class="img-container" id="home-page-properties-carousel"></div>
+                    <h5>Photographed by :<label id="img-caption"></label></h5>
                     <div class="d-flex justify-content-around">
-                        <button type="button" class="btn btn-primary" id="back-carusel-btn">
-                            <i class="bi bi-arrow-left"></i>
+                        <button type="button" class="btn btn-secondary" id="back-carusel-btn">
+                            <i class="bi bi-arrow-left"></i> Prev
                         </button>
-                        <button type="button" class="btn btn-primary" id="next-carusel-btn">
-                            <i class="bi bi-arrow-right"></i>
+                        <button type="button" class="btn btn-secondary" id="next-carusel-btn">
+                            Next <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -518,6 +520,7 @@
                     <p class="p-2 float-end">not registered yet ?
                         <a class="nav-item" href="#" id="login-to-register-page"> Click here ...</a>
                     </p>
+                    <div id="loginToast" class="toastStyle"></div>
                 </form>
             </div>
             <div id="user-page" class="d-none">
@@ -738,6 +741,16 @@
                             </div>
                     </section>
                 </form>
+            </div>
+            <div id="404-not-found-page" class="d-none">
+                <div>
+                    <h1 class="pagetitle display-1">ERROR 404</h1>
+                </div>
+                <hr>
+                <p class="p-2 float-end">to home page ?
+                    <a class="nav-item" href="#" id="404page-to-login"> Click here ...</a>
+                    , but u have to sign in first
+                </p>
             </div>
 
         </main>

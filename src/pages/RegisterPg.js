@@ -7,7 +7,6 @@ import validatePassword from "../validations/validatePassword.js";
 import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
 import { showToastRegister } from "../services/toast.js";
-import validateAddress from "../validations/validateAddress.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);
 const inputLName = document.getElementById(RegisterInputsId.Lname);
@@ -77,25 +76,6 @@ inputFName.addEventListener("input", () => {
 inputLName.addEventListener("input", () => {
     checkNameInput(inputLName);
 });
-// ADDRESS
-// inputState.addEventListener("input", () => {
-//     checkAddressInput(inputState);
-// });
-// inputCountry.addEventListener("input", () => {
-//     checkAddressInput(inputCountry);
-// });
-// inputCity.addEventListener("input", () => {
-//     checkAddressInput(inputCity);
-// });
-// inputStreet.addEventListener("input", () => {
-//     checkAddressInput(inputStreet);
-// });
-// inputHouse.addEventListener("input", () => {
-//     checkAddressInput(inputHouse);
-// });
-// inputZipCode.addEventListener("input", () => {
-//     checkAddressInput(inputZipCode);
-// });
 // CONTACT
 inputEmail.addEventListener("input", () => {
     checkEmailInput();
@@ -112,7 +92,6 @@ inputRePassword.addEventListener("input", () => {
 });
 
 const checkNameInput = (name) => {
-    console.log('checkNameInput');
     let errorArr = validateName(name.value);
     if (errorArr.length === 0) {
         //the text is ok
@@ -145,67 +124,6 @@ const checkNameInput = (name) => {
     ifEnableToSubmit();
 };
 
-// const checkAddressInput = (partOfAddr) => {
-//     let errorArr = validateAddress(partOfAddr.value, partOfAddr.placeholder.split(" ")[0]);
-//     if (errorArr.length === 0) {
-//         //the text is ok
-//         partOfAddr.classList.remove("is-invalid");
-//         if (partOfAddr.placeholder.split(" ")[0] === "state") {
-//             document.getElementById("register-alert-state").classList.add("d-none");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "country") {
-//             document.getElementById("register-alert-country").classList.add("d-none");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "city") {
-//             document.getElementById("register-alert-city").classList.add("d-none");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "street") {
-//             document.getElementById("register-alert-street").classList.add("d-none");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "house") {
-//             document.getElementById("register-alert-house").classList.add("d-none");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "zip") {
-//             document.getElementById("register-alert-zip").classList.add("d-none");
-//         }
-
-//     } else {
-//         //the text is not ok
-//         partOfAddr.classList.add("is-invalid");
-//         if (partOfAddr.placeholder.split(" ")[0] === "state") {
-//             document.getElementById("register-alert-state").classList.remove("d-none");
-//             document.getElementById("register-alert-state").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "country") {
-//             document.getElementById("register-alert-country").classList.remove("d-none");
-//             document.getElementById("register-alert-country").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "city") {
-//             document.getElementById("register-alert-city").classList.remove("d-none");
-//             document.getElementById("register-alert-city").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "street") {
-//             document.getElementById("register-alert-street").classList.remove("d-none");
-//             document.getElementById("register-alert-street").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "house") {
-//             document.getElementById("register-alert-house").classList.remove("d-none");
-//             document.getElementById("register-alert-house").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//         if (partOfAddr.placeholder.split(" ")[0] === "zip") {
-//             document.getElementById("register-alert-zip").classList.remove("d-none");
-//             document.getElementById("register-alert-zip").innerHTML =
-//                 errorArr.join("<br>");
-//         }
-//     }
-
-//     ifEnableToSubmit();
-// };
 const checkEmailInput = () => {
     let errorArr = validateEmail(inputEmail.value);
     if (errorArr.length === 0) {
@@ -223,6 +141,7 @@ const checkEmailInput = () => {
     }
     ifEnableToSubmit();
 };
+
 const checkPhoneInput = () => {
     let errorArr = validatePhone(inputPhone.value);
     if (errorArr.length === 0) {
@@ -291,7 +210,6 @@ inputSubmit.addEventListener("click", () => {
 
     let users = localStorage.getItem("users");
     let nextUserId = localStorage.getItem("nextUserId");
-    console.log("in register " + nextUserId);
     nextUserId = +nextUserId;
     let newUser = new User(
         nextUserId++,
@@ -325,7 +243,6 @@ inputSubmit.addEventListener("click", () => {
     } else {
         //we have users
         users = JSON.parse(users); // convert from string to array of objects
-        // console.log("users from localStorage", users);
         for (let user of users) {
             if (user.email === inputEmail.value) {
                 //display msg - email already exists

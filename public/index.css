@@ -75,16 +75,17 @@
     z-index: 100;
 }
 
-.disable-link {
-    pointer-events: none;
-}
-
 #user-page {
     background-image: url(assets/images/userbgc.jpg);
 }
 
 #user-profile-img {
     margin-bottom: 15px;
+}
+
+.btn-secondary {
+    z-index: 10;
+    margin-bottom: -10px;
 }
 
 @media (max-width: 991px) {

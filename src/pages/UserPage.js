@@ -30,7 +30,6 @@ let PasswordFlag = false;
 let RePasswordFlag = false;
 
 window.addEventListener("load", () => {
-    // console.log('userpage.js when page loaded');
     if (checkIfConnected()) {
         tokenUser = localStorage.getItem("tokenUser");
         tokenUser = JSON.parse(tokenUser);
@@ -86,7 +85,6 @@ inputSubmit.addEventListener("click", () => {
     }
     if (inputPassword.value !== inputRePassword.value) {
         showToastUser("password & re-password doesn't match", false);
-        console.log('showToast user');
         return;
     }
 
@@ -114,7 +112,6 @@ inputSubmit.addEventListener("click", () => {
     // check if any user have the same email before update
     for (let user of usersWithOutToken) {
         if (user.email === tokenUser.email) {
-            console.log('//display msg - email already exists');
             showToastUser("Email already exists", false);
             return;
         }

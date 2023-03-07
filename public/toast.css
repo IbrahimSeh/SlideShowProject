@@ -4,14 +4,16 @@
     /* height: 3rem; */
     left: 1rem;
     border-radius: 0.3rem;
+    font-weight: bold;
+    color: #5c53e0;
 }
 
 #homeToast {
-    font-weight: bold;
-    text-align: center;
     margin-left: 88px;
-    color: #3b2fe2;
+}
 
+#loginToast {
+    margin-left: 88px;
 }
 
 .success {
