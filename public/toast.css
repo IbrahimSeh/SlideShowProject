@@ -1,7 +1,5 @@
 .toastStyle {
     position: absolute;
-    /* width: 30rem; */
-    /* height: 3rem; */
     left: 1rem;
     border-radius: 0.3rem;
     font-weight: bold;
@@ -28,7 +26,6 @@
 
 .toast-timer {
     background-color: rgb(228, 12, 12);
-    /* width: 100%; */
     height: 0.1rem;
     animation: toast-slider 10s linear;
     padding: 0;
