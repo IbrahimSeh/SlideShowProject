@@ -8,51 +8,46 @@ const createData = () => {
         new imgProperty(
             nextPropertyId++,
             "Kenny's house",
-            8.12,
-            "ibrahim seh",
-            "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
+            812,
+            "user1",
+            "http://southparkstudios.mtvnimages.com/shared/locations/mccormick-house.jpg"
         ),
-        // https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg
         new imgProperty(
             nextPropertyId++,
             "Chocolate house",
             20,
-            "ibrahim seh6",
-            "./assets/images/awsomeColor2.jpg"
+            "user2",
+            "https://i.pinimg.com/originals/c8/76/76/c876767d3236d4aa6c70d9fd30e75ca3.jpg"
         ),
-        // https://static-cse.canva.com/blob/666314/bestfreestockphotos.jpg
         new imgProperty(
             nextPropertyId++,
-            "Kenny's beach house",
+            "nature",
             25,
-            "ibrahim seh2",
-            "./assets/images/awsomeColor3.jpg"
+            "user3",
+            "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
         ),
-        // https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg
         new imgProperty(
             nextPropertyId++,
-            "John's raft",
+            "nature desert and sands",
             9.9,
-            "ibrahim seh3",
-            "./assets/images/awsomeColor4.jpg"
+            "user4",
+            "https://www.befunky.com/images/prismic/5ddfea42-7377-4bef-9ac4-f3bd407d52ab_landing-photo-to-cartoon-img5.jpeg?auto=avif,webp&format=jpg&width=863"
         ),
-        // https://www.befunky.com/images/prismic/5ddfea42-7377-4bef-9ac4-f3bd407d52ab_landing-photo-to-cartoon-img5.jpeg?auto=avif,webp&format=jpg&width=863
+
         new imgProperty(
             nextPropertyId++,
-            "John's pie",
+            "Kenny's land",
             3.14,
-            "ibrahim seh4",
-            "./assets/images/colorPlate1.jpg"
+            "user5",
+            "https://thumbs.dreamstime.com/b/landscape-nature-mountan-alps-rainbow-76824355.jpg"
         ),
-        // https://thumbs.dreamstime.com/b/landscape-nature-mountan-alps-rainbow-76824355.jpg
         new imgProperty(
             nextPropertyId++,
-            "Kart's dream house",
+            "Taj mahal",
             2.5,
-            "ibrahim seh5",
-            "https://www.dpa.com/fileadmin/_processed_/b/a/csm_2._Platz_News_9f70fddc53.jpg"
+            "user6",
+            "https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
         ),
-        // https://www.dpa.com/fileadmin/_processed_/b/a/csm_2._Platz_News_9f70fddc53.jpg
     ];
     return propertiesImgsArr;
 };

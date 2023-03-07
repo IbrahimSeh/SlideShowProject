@@ -16,3 +16,41 @@
     column-gap: 45px;
     column-rule: 1px dashed #8cbf3f;
 }
+
+.about-images-help {
+    margin: 10px;
+}
+
+.about-Cards {
+    margin: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background-color: #f2f2f2;
+    border: 1px solid #0d0d0d;
+    padding: 10px;
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+.card-img-top:hover {
+    cursor: pointer;
+}
+
+.card-title {
+    text-align: justify;
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+    color: #0d0d0d;
+}
+
+.card-text {
+    height: 170px;
+}

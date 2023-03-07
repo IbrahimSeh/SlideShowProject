@@ -38,16 +38,16 @@
 .pagetitle {
     text-align: center;
     margin: 10px;
-    color: #f4bb8a;
+    color: #ee8121;
     font-weight: 400;
-    text-shadow: 2px 2px 5px #0d6efd;
+    text-shadow: 2px 2px 5px #083c8a;
 }
 
 .middletitle {
     margin: 10px 10px 20px 10px;
-    color: #f4bb8a;
+    color: #854c1b;
     font-weight: 600;
-    text-shadow: 2px 2px 5px #090d14;
+    text-shadow: 2px 2px 5px #172a4b;
 }
 
 #currentImgInPopup {
