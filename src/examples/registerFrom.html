@@ -10,70 +10,56 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../public/index.css">
+    <link rel="stylesheet" href="../../public/modal.css">
     <title>register form</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="popupEditImg" class="row justify-content-md-center">
-            <div>
-                <h1 class="pagetitle display-1">EDIT PICTURE PAGE</h1>
-            </div>
-            <div>
-                <h3 class="middletitle">here you can edit the selected picture</h3>
-            </div>
-            <div id="popupEditImgChild" class="col-8">
-                <form class="mx-1 mx-md-4">
+    <div id="popupEditImg" class="row popup-wrapper justify-content-md-center ">
+        <div>
+            <h1 class="pagetitle display-1">EDIT PICTURE PAGE</h1>
+        </div>
+        <span class="close" data-toggle="tooltip" data-placement="right" title="use ESC to close">&times;</span>
+        <div id="popupEditImgChild" class="col-8 popup-div">
+            <form class="mx-1 mx-md-4">
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="popup-input-url">Url</label>
+                        <input type="text" id="popup-input-url" class="form-control" />
+                    </div>
+                </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="popup-input-url">Url</label>
-                            <input type="text" id="popup-input-url" class="form-control" />
-                        </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="popup-input-url">Alt</label>
+                        <input type="text" id="popup-input-alt" class="form-control" />
                     </div>
+                </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="popup-input-url">Alt</label>
-                            <input type="text" id="popup-input-alt" class="form-control" />
-                        </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="popup-input-credit">Credit</label>
+                        <input type="text" id="popup-input-credit" class="form-control" />
                     </div>
+                </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="popup-input-credit">Credit</label>
-                            <input type="text" id="popup-input-credit" class="form-control" />
-                        </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="popup-input-price">Price</label>
+                        <input type="text" id="popup-input-price" class="form-control" />
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="popup-input-price">Price</label>
-                            <input type="text" id="popup-input-price" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <!-- <button type="button" class="btn btn-success" id="saveBtn-EditImgPopup">
-                            <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-danger" id="cancelBtn-EditImgPopup" data-toggle="tooltip"
-                            data-placement="left" title="Use ESC to close">
-                            <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>
-                            Cancel
-                        </button> -->
-                        <button id="saveBtn-EditImgPopup" type="button"
-                            class="btn btn-primary btn-lg btn-block w-100 m-1">
-                            <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>Submit</button>
-                        <button id="cancelBtn-EditImgPopup" type="button"
-                            class="btn btn-secondary btn-lg btn-block w-100 m-1">
-                            <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>Cancel</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-4 ">
-                <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712__340.jpg" alt="">
-            </div>
+                </div>
+                <div class="card-body">
+                    <button id="saveBtn-EditImgPopup" type="button" class="btn btn-primary btn-lg btn-block w-100 m-1">
+                        <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>Submit</button>
+                    <button id="cancelBtn-EditImgPopup" type="button"
+                        class="btn btn-secondary btn-lg btn-block w-100 m-1">
+                        <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4 ">
+            <img id="currentImgInPopup" src="" class="img-fluid" alt="Current image">
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

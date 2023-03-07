@@ -1,13 +1,13 @@
 import User from "../modelsOfData/user.js";
 import RegisterInputsId from "../modelsOfData/registerData.js";
 import validateName from "../validations/validateName.js";
-import validateAddress from "../validations/validateAddress.js";
 import validateEmail from "../validations/validateEmail.js";
 import validatePhone from "../validations/validatePhone.js";
 import validatePassword from "../validations/validatePassword.js";
 import { switchPages } from "../routes/switchRouter.js";
 import PagesIdObj from "../modelsOfData/pages.js";
 import { showToastRegister, showToastUser } from "../services/toast.js";
+import validateAddress from "../validations/validateAddress.js";
 
 const inputFName = document.getElementById(RegisterInputsId.Fname);
 const inputLName = document.getElementById(RegisterInputsId.Lname);
@@ -112,6 +112,7 @@ inputRePassword.addEventListener("input", () => {
 });
 
 const checkNameInput = (name) => {
+    console.log('checkNameInput');
     let errorArr = validateName(name.value);
     if (errorArr.length === 0) {
         //the text is ok
@@ -274,10 +275,6 @@ const ifEnableToSubmit = () =>
     (inputSubmit.disabled = !(FnameFlag && LnameFlag && EmailFlag && PasswordFlag && RePasswordFlag));
 
 inputResetAll.addEventListener("click", () => {
-    // inputFName.value = inputLName.value = inputState.value = inputCountry.value = inputCity.value =
-    //     inputStreet.value = inputHouse.value = inputZipCode.value = inputEmail.value = inputPhone.value = inputPassword.value =
-    //     inputRePassword.value = "";
-    // inputIsBussiness.checked = false;
     location.reload();
 });
 
@@ -312,7 +309,7 @@ inputSubmit.addEventListener("click", () => {
         inputIsBussiness.checked,
     );
 
-    localStorage.setItem("nextUserId", nextUserId + "");
+
     if (!users) {
         //the first user
         users = [newUser];
@@ -336,11 +333,10 @@ inputSubmit.addEventListener("click", () => {
                 return;
             }
         }
+        localStorage.setItem("nextUserId", nextUserId + "");
         //user provided new email
         users = [...users, newUser];
         localStorage.setItem("users", JSON.stringify(users));
     }
     switchPages(PagesIdObj.loginPage);
 });
-
-export { checkNameInput, checkPasswordInput, checkEmailInput, checkPhoneInput };

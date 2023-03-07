@@ -20,7 +20,7 @@ const LogoutNavLink = document.getElementById(LinksNavBarIdobj.logoutLinkNavBar)
 const LogintoRegister = document.getElementById(LinksNavBarIdobj.loginToRegister);
 
 window.addEventListener("load", () => {
-    console.log('in app window addEventListener load');
+    // console.log('in app window addEventListener load');
     initializeNavbar(addNewImgPopup);
     if (checkIfConnected()) {
         let user = localStorage.getItem("tokenUser");

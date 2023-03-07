@@ -28,7 +28,7 @@ let propertiesCarusel = document.getElementById("propertiesCarusel");
 let isBussiness;
 
 window.addEventListener("load", () => {
-    console.log('load homepage.js');
+
     propertiesArr = localStorage.getItem("propsOfImg");
     if (!propertiesArr) {
         return;
@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
 });
 
 const initializeElements = () => {
-    displayNow = propertiesList; // choose who we want to display
+    displayNow = propertiesCarusel; // choose who we want to display
     displayMode(displayNow);
 };
 
@@ -113,7 +113,7 @@ const displayMode = (toDisplay) => {
 const updateDisplays = () => {
     updatePropertiesGallery(propertiesArr); // update gallery
     updatePropertiesList(propertiesArr); // update list
-    //updatePropertiesCarousel(propertiesArr);  update carousel
+    updatePropertiesCarousel(propertiesArr); // update carousel
 };
 
 const saveToLocalStorage = (arrToSave) => {

@@ -57,7 +57,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" id="nav-aboutus-link">About us</a>
                             </li>
-                            <!-- it's a Popup -->
+                            <!-- open with Popup -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#" id="nav-add-new-property-link">Add Pic</a>
                             </li>
@@ -211,7 +211,7 @@
                 </div>
 
             </div>
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal  justify-content-md-center ">
                 <div>
                     <h1 class="pagetitle display-1">CREAT PICTURE FORM</h1>
                 </div>
@@ -219,29 +219,43 @@
                     <h3 id="midTitModal" class="middletitle">here you can add a new picture</h3>
                 </div>
                 <span class="close" data-toggle="tooltip" data-placement="right" title="use ESC to close">&times;</span>
-                <div class="add-img-modal d-flex row-cols-1">
-                    <form onsubmit="event.preventDefault()">
-                        <div class="mb-3">
-                            <label for="modal-input-url" class="form-label">Url</label>
-                            <input type="text" class="form-control w-75" id="modal-input-url" placeholder="" required>
+                <div class="add-img-modal col-8 popup-div">
+                    <form onsubmit="event.preventDefault()" class="mx-1 mx-md-4">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="modal-input-url">Url</label>
+                                <input type="text" id="modal-input-url" class="form-control" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="modal-input-alt" class="form-label">Alt</label>
-                            <input type="text" class="form-control w-75" id="modal-input-alt" placeholder="" required>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="modal-input-url">Alt</label>
+                                <input type="text" id="modal-input-alt" class="form-control" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="modal-input-credit" class="form-label">Credit</label>
-                            <input type="text" class="form-control w-75" id="modal-input-credit" placeholder=""
-                                required>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="modal-input-credit">Credit</label>
+                                <input type="text" id="modal-input-credit" class="form-control" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="modal-input-price" class="form-label">Price</label>
-                            <input type="text" class="form-control w-75" id="modal-input-price" placeholder="" required>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="modal-input-price">Price</label>
+                                <input type="text" id="modal-input-price" class="form-control" />
+                            </div>
                         </div>
-                        <button id="modal-btn-submit" type="button"
-                            class="btn btn-primary btn-lg btn-block w-100 m-1">Submit</button>
-                        <button id="modal-btn-cancel" type="button"
-                            class="btn btn-secondary btn-lg btn-block w-100 m-1">Cancel</button>
+                        <div class="card-body">
+                            <button id="modal-btn-submit" type="button"
+                                class="btn btn-primary btn-lg btn-block w-100 m-1">
+                                <i class="bi bi-check-circle-fill" id="saveBtnIcon-EditImgPopup"></i>Submit</button>
+                            <button id="modal-btn-cancel" type="button"
+                                class="btn btn-secondary btn-lg btn-block w-100 m-1">
+                                <i class="bi bi-x-circle-fill" id="cancelBtnIcon-EditImgPopup"></i>Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -459,9 +473,9 @@
                                                     <button id="register-btn-resetAll" type="button"
                                                         class="btn btn-light btn-lg">Reset all</button>
                                                     <button id="register-btn-submit" type="button" disabled="true"
-                                                        class="btn btn-warning btn-lg ms-2">Submit
-                                                        form</button>
-                                                    <div id="registerToast" class="toast"></div>
+                                                        class="btn btn-warning btn-lg ms-2">Submit</button>
+                                                    <!-- <div id="registerToast" class="toast"></div> -->
+                                                    <div id="registerToast" class="toastStyle"></div>
                                                 </div>
 
                                             </div>
@@ -714,10 +728,8 @@
                                                         all</button>
                                                     <button id="user-btn-submit" type="button"
                                                         class="btn btn-warning btn-lg ms-2">Submit
-                                                        form</button>
-                                                    <div id="userToast" class="toast">
-                                                        <h1>userToast</h1>
-                                                    </div>
+                                                    </button>
+                                                    <div id="userToast" class="toastStyle"></div>
                                                 </div>
 
                                             </div>

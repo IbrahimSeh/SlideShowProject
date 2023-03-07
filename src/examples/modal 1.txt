@@ -1,0 +1,34 @@
+<div id="myModal" class="modal">
+                <div>
+                    <h1 class="pagetitle display-1">CREAT PICTURE FORM</h1>
+                </div>
+                <div>
+                    <h3 id="midTitModal" class="middletitle">here you can add a new picture</h3>
+                </div>
+                <span class="close" data-toggle="tooltip" data-placement="right" title="use ESC to close">&times;</span>
+                <div class="add-img-modal d-flex row-cols-1">
+                    <form onsubmit="event.preventDefault()">
+                        <div class="mb-3">
+                            <label for="modal-input-url" class="form-label">Url</label>
+                            <input type="text" class="form-control w-75" id="modal-input-url" placeholder="" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-input-alt" class="form-label">Alt</label>
+                            <input type="text" class="form-control w-75" id="modal-input-alt" placeholder="" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-input-credit" class="form-label">Credit</label>
+                            <input type="text" class="form-control w-75" id="modal-input-credit" placeholder=""
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-input-price" class="form-label">Price</label>
+                            <input type="text" class="form-control w-75" id="modal-input-price" placeholder="" required>
+                        </div>
+                        <button id="modal-btn-submit" type="button"
+                            class="btn btn-primary btn-lg btn-block w-100 m-1">Submit</button>
+                        <button id="modal-btn-cancel" type="button"
+                            class="btn btn-secondary btn-lg btn-block w-100 m-1">Cancel</button>
+                    </form>
+                </div>
+            </div>

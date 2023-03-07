@@ -59,7 +59,6 @@ window.addEventListener("load", () => {
         hidePopup();
     });
     window.addEventListener("keydown", (event) => {
-        console.log('cancelBtn-EditImgPopup by ESC');
         if (event.key === 'Escape') {
             hidePopup();
         }
